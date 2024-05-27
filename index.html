@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Open Sans';
+        }
+
+        h1 {
+            font-size: 10vw;
+            text-align: center;
+            background: linear-gradient(90deg, #00cba930, #00cba9, #0099ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 100;
+        }
+
+        select,
+        th,
+        td {
+            padding: 5px;
+        }
+
+        select {
+            position: absolute;
+            right: 10px;
+            top: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        main {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .decor svg {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .separator1 {
+            background-color: #0099ff;
+        }
+        .textDiv{
+            padding: 10px;
+            text-align: justify;
+        }
+        .textDiv p {
+            margin: 20px 0;
+        }
+        .typewriter {
+            width: max-content;
+            margin: 0 auto;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Página multi-idioma</h1>
+        <select id="language-select">
+            <option value="de">Deutch</option>
+            <option value="en">English</option>
+            <option value="es" selected>Español</option>
+            <option value="it">Italiano</option>
+        </select>
+
+        <div id="content">
+            <!-- Aquí es donde se mostrará el contenido correspondiente al idioma seleccionado -->
+        </div>
+        <div class="decor">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#00cba9" fill-opacity="0.3" d="M0,0L1440,700L1440,320L0,320Z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#00cba9" fill-opacity="1"
+                    d="M0,256L48,245.3C96,235,192,213,288,218.7C384,224,480,256,576,224C672,192,768,96,864,80C960,64,1056,128,1152,144C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0099ff" fill-opacity="1"
+                    d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </main>
+    <div class="separator1 textDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus pariatur dolorem et iste ea
+        assumenda magni delectus molestias, saepe enim odio eum id harum inventore praesentium quod hic sint ullam
+        itaque asperiores eius consequuntur aut? Enim mollitia ullam suscipit ut cupiditate impedit ipsum. Culpa harum
+        necessitatibus, illum maxime animi nam porro, architecto officia explicabo nihil maiores expedita ea fugit
+        praesentium inventore quod alias! Repellendus commodi voluptatibus enim asperiores eveniet consequuntur. Vel
+        eaque cupiditate ex eum fuga? Ipsum nesciunt dolor ducimus tenetur laborum reiciendis ipsam dolorem voluptatum
+        temporibus dignissimos! Ea aperiam cupiditate ab velit, eum rerum nostrum incidunt minima laudantium nulla?
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0099ff" fill-opacity="1"
+            d="M0,0L48,21.3C96,43,192,85,288,96C384,107,480,85,576,85.3C672,85,768,107,864,117.3C960,128,1056,128,1152,133.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+        </path>
+    </svg>
+    <div class="textDiv">
+        <h1 id="typewriter" class="typewriter">Nueva sección</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis cumque expedita a necessitatibus eius!
+            Corporis libero nulla recusandae, asperiores, nesciunt explicabo iure odit cupiditate praesentium ea, magni
+            delectus aperiam!</p>
+        <p>Dolorum corporis impedit quidem! Illo cupiditate molestias nisi quos voluptatibus! Reprehenderit et
+            laudantium, provident fuga, enim ut quasi quo possimus iste voluptate corporis consequatur officia ullam,
+            repudiandae temporibus eligendi porro!</p>
+        <p>Veniam dolor quisquam maxime odio ullam eius? Consequatur nostrum rem quia? Quia minus minima, assumenda
+            accusantium ipsa error nulla, ducimus ad nesciunt numquam mollitia quae similique accusamus maxime incidunt
+            eligendi.</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
