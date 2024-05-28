@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const typewriterElement = document.getElementById("typewriter");
         let index = 0;
         const text = content.tituloWriter;
+        const velocidad = 150;
 
         contentElement.innerHTML = `
             <table border="1" style="border-collapse: collapse;">
@@ -46,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (index < text.length) {
                 typewriterElement.innerHTML += text[index];
                 index++;
-                typeTimeout = setTimeout(type, 100); // Guarda el nuevo timeout
+                typeTimeout = setTimeout(type, velocidad);
             } else {
                 typeTimeout = setTimeout(() => {
                     index = 0;
                     typewriterElement.innerHTML = '';
-                    typeTimeout = setTimeout(type, 100);
+                    typeTimeout = setTimeout(type, velocidad);
                 }, 5000);
             }
         }

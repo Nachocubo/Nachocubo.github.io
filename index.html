@@ -5,134 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            min-height: 100vh;
-            font-family: 'Open Sans';
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            text-align: center;
-            background: linear-gradient(90deg, #00cba930, #00cba9, #0099ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 100;
-        }
-
-        h1 {
-            font-size: 10vw;
-        }
-
-        h3 {
-            font-size: 7vw;
-        }
-
-        select,
-        th,
-        td {
-            padding: 5px;
-        }
-
-        select {
-            position: absolute;
-            right: 10px;
-        }
-
-        table {
-            width: 80%;
-            margin: 0 auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        main {
-            position: relative;
-            min-height: 100vh;
-        }
-
-        .decor svg {
-            position: absolute;
-            bottom: 0;
-        }
-
-        .separator1 {
-            background-color: #0099ff;
-        }
-
-        .textDiv {
-            padding: 10px;
-            text-align: justify;
-        }
-
-        .textDiv p {
-            margin: 20px 0;
-        }
-
-        .typewriter {
-            width: max-content;
-            margin: 0 auto;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 7px solid;
-            padding-right: 20px;
-            animation: blink 1s ease-in infinite;
-        }
-
-        .proyectos {
-            padding: 10px 50px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .proyectos > div {
-            background-color: green;
-            position: relative;
-            width: 150px;
-            height: 100px;
-            margin: 10px;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .proyectos > div .proy, .proyectos > div .oculta {
-            position: absolute;
-            width: 100%;
-            min-height: 100%;
-            background-color: red;
-            text-align: center;
-        }
-        .proyectos > div .proy{
-            opacity: .7;
-        }
-        .proyectos > div .oculta{
-            opacity: 0;
-        }
-
-        @keyframes blink {
-
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: black;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -191,7 +64,7 @@
         </div>
         <div>
             <div class="proy">
-                <span>Proyecto 1</span>
+                <span>Proyecto 2</span>
             </div>
             <!--Parte trasera de tarjeta-->
             <div class="oculta">
@@ -200,7 +73,7 @@
         </div>
         <div>
             <div class="proy">
-                <span>Proyecto 1</span>
+                <span>Proyecto 3</span>
             </div>
             <!--Parte trasera de tarjeta-->
             <div class="oculta">
@@ -209,7 +82,7 @@
         </div>
         <div>
             <div class="proy">
-                <span>Proyecto 1</span>
+                <span>Proyecto 4</span>
             </div>
             <!--Parte trasera de tarjeta-->
             <div class="oculta">
