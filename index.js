@@ -28,8 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         /*IDIOMAS*/
         const esLvl = 100;
-        const enLvl = 80;
+        const enLvl = 60;
         const itLvl = 20;
+        
+        /**
+         * 
+         * @param {number} level Nivel de idioma
+         * @description Devuelve el nivel de idioma en porcentaje de 60, siendo así 10% -> A1, 20 -> A2... 60% -> C2
+         * @returns Porcentaje de idioma sobre 60%
+         */
+
+        function operacion(level){
+            return level * 100 / 60;
+        }
 
         contentElement.innerHTML = `
             <table border="1" style="border-collapse: collapse;">
@@ -46,9 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#idiomas').innerHTML = content.idiomas;
 
         /*Nivel de idiomas */
-        document.querySelector('#es-bar .percentage').style.width = esLvl * 100 / 60 + '%';
-        document.querySelector('#en-bar .percentage').style.width = enLvl * 100 / 60 + '%';
-        document.querySelector('#it-bar .percentage').style.width = itLvl * 100 / 60 + '%';
+        document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
+        document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
+        document.querySelector('#it-bar .percentage').style.width = operacion(itLvl) + '%';
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);

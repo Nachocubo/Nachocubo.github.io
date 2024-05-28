@@ -103,8 +103,16 @@ main {
 
 .idiomas{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 10px;
+}
+
+.idiomas h4 {
+    position: relative;
+    bottom: -40px;
+    left: -44%;
+    font-weight: 400;
+    z-index: 2;
 }
 
 .idiomas span .percentage{
@@ -114,8 +122,9 @@ main {
 }
 .idiomas span{
     position: relative;
-    width: calc(100vw/3 - 20px);
+    width: 50vw;
     height: 20px;
+    margin: 5px 30px;
 }
 
 .proyectos {
