@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
-    <link rel="stylesheet" href="css/styles.scss">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <main>
-        <h1>Página multi-idioma</h1>
+        <h1>Ignacio Cubo</h1>
         <select id="language-select">
-            <option value="de">Deutch</option>
-            <option value="en">English</option>
-            <option value="es" selected>Español</option>
-            <option value="it">Italiano</option>
+            <option value="es" data-img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png"> Español</option>
+            <option value="en" data-img-src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg">Inglés</option>
+            <option value="de" data-img-src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg">Alemán</option>
+            <option value="it" data-img-src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg">Italiano</option>
         </select>
 
         <div id="content">
@@ -50,7 +50,19 @@
         <p id="paragraph-3"></p>
     </div>
 
-    <h3></h3>
+    <h3 id="idiomas"></h3>
+    <div class="idiomas">
+        <h4>Español</h4>
+        <span id="es-bar">
+            <span class="percentage"></span>
+        </span>
+        <h4>Inglés</h4>
+        <span id="en-bar"><span class="percentage"></span></span>
+        <h4>Italiano</h4>
+        <span id="it-bar"><span class="percentage"></span></span>
+    </div>
+
+    <h3 id="proyectos"></h3>
     <div class="proyectos">
         <!--Parte frontal de tarjeta-->
         <div>

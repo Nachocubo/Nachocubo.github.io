@@ -26,18 +26,29 @@ document.addEventListener("DOMContentLoaded", function () {
         const text = content.tituloWriter;
         const velocidad = 150;
 
+        /*IDIOMAS*/
+        const esLvl = 100;
+        const enLvl = 80;
+        const itLvl = 20;
+
         contentElement.innerHTML = `
             <table border="1" style="border-collapse: collapse;">
                 <tr><th>Saludo</th><th>Despedida</th></tr>
                 <tr><td>${content.saludo} ${languageSelect.options[languageSelect.selectedIndex].text}</td><td>${content.despedida}</td></tr>
             </table>`;
 
-        document.getElementById('separator-1').innerHTML = content.texto1;
+        document.getElementById('separator-1').innerHTML = `<span>${content.quiensoy}</span><p>${content.texto1}</p>`;
         document.getElementById('paragraph-1').innerHTML = content.parrafo1;
         document.getElementById('paragraph-2').innerHTML = content.parrafo2;
         document.getElementById('paragraph-3').innerHTML = content.parrafo3;
         typewriterElement.innerHTML = '';
-        document.querySelector('h3').innerHTML = content.proyectos;
+        document.querySelector('#proyectos').innerHTML = content.proyectos;
+        document.querySelector('#idiomas').innerHTML = content.idiomas;
+
+        /*Nivel de idiomas */
+        document.querySelector('#es-bar .percentage').style.width = esLvl * 100 / 60 + '%';
+        document.querySelector('#en-bar .percentage').style.width = enLvl * 100 / 60 + '%';
+        document.querySelector('#it-bar .percentage').style.width = itLvl * 100 / 60 + '%';
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);
