@@ -5,22 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Selector</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.scss">
 </head>
 
 <body>
     <main>
         <h1>Ignacio Cubo</h1>
-        <select id="language-select">
-            <option value="es" data-img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png"> Español</option>
-            <option value="en" data-img-src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg">Inglés</option>
-            <option value="de" data-img-src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg">Alemán</option>
-            <option value="it" data-img-src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg">Italiano</option>
-        </select>
 
-        <div id="content">
-            <!-- Aquí es donde se mostrará el contenido correspondiente al idioma seleccionado -->
-        </div>
+        <header>
+            <ul>
+                <li><a href="#separator-1">Sobre mi</a></li>
+                <li><a href="#typewriter">Nueva seccion</a></li>
+                <li><a href="#idiomas">idiomas</a></li>
+                <li><a href="#proyectos">proyectos</a></li>
+            </ul>
+
+            <select id="language-select">
+                <option value="es"
+                    data-img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png">
+                    Español
+                </option>
+                <option value="en"
+                    data-img-src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg">Inglés
+                </option>
+                <option value="de" data-img-src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg">Alemán
+                </option>
+                <option value="it" data-img-src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg">Italiano
+                </option>
+            </select>
+        </header>
+
         <div class="decor">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#00cba9" fill-opacity="0.3" d="M0,0L1440,700L1440,320L0,320Z"></path>

@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const velocidad = 150;
 
         /*IDIOMAS*/
-        const esLvl = 100;
-        const enLvl = 60;
-        const itLvl = 20;
+        const esLvl = 'C2';
+        const enLvl = 'B2';
+        const itLvl = 'A2';
         
         /**
          * 
@@ -39,14 +39,21 @@ document.addEventListener("DOMContentLoaded", function () {
          */
 
         function operacion(level){
-            return level * 100 / 60;
+            switch(level) {
+                case "A1":
+                    return 1/6 * 100;
+                case "A2":
+                    return 2/6 * 100;
+                case "B1":
+                    return 3/6 * 100;
+                case "B2":
+                    return 4/6 * 100;
+                case "C1":
+                    return 5/6 * 100;
+                case "C2":
+                    return 6/6 * 100;
+            }
         }
-
-        contentElement.innerHTML = `
-            <table border="1" style="border-collapse: collapse;">
-                <tr><th>Saludo</th><th>Despedida</th></tr>
-                <tr><td>${content.saludo} ${languageSelect.options[languageSelect.selectedIndex].text}</td><td>${content.despedida}</td></tr>
-            </table>`;
 
         document.getElementById('separator-1').innerHTML = `<span>${content.quiensoy}</span><p>${content.texto1}</p>`;
         document.getElementById('paragraph-1').innerHTML = content.parrafo1;
@@ -58,8 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         /*Nivel de idiomas */
         document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
+        document.querySelector('#es-bar .percentage').outerHTML += esLvl;
         document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
+        document.querySelector('#en-bar .percentage').outerHTML += enLvl;
         document.querySelector('#it-bar .percentage').style.width = operacion(itLvl) + '%';
+        document.querySelector('#it-bar .percentage').outerHTML += itLvl;
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);
