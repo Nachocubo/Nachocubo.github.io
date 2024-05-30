@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         typewriterElement.innerHTML = '';
         document.querySelector('#proyectos').innerHTML = content.proyectos;
         document.querySelector('#idiomas').innerHTML = content.idiomas;
+        document.querySelector('#formaTitle').innerHTML = content.formaTitle;
 
         /*Nivel de idiomas */
         document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';

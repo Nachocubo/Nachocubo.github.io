@@ -1,12 +1,11 @@
 {
-    "saludo": "¡Hola! Este es el contenido en",
-    "despedida": "Buena suerte con el proyecto",
     "proyectos": "Proyectos",
-    "tituloWriter": "Nueva sección",
+    "tituloWriter": "Full Stack Developer",
     "texto1": "La tecnología está transformando la forma en que vivimos y trabajamos. Desde la inteligencia artificial hasta la energía renovable, las innovaciones están remodelando nuestro mundo a un ritmo acelerado. Es esencial mantenerse informado y adaptarse a estos cambios para aprovechar las oportunidades que ofrecen.",
     "parrafo1": "La innovación es clave para el progreso.",
     "parrafo2": "La educación abre puertas a nuevas oportunidades.",
     "parrafo3": "La cooperación internacional es vital para la paz.",
     "quiensoy": "¿Quién soy?",
-    "idiomas": "Idiomas"
+    "idiomas": "Idiomas",
+    "formaTitle": "Mi formación como"
 }

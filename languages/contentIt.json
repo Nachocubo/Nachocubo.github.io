@@ -1,12 +1,11 @@
 {
-    "saludo": "Ciao, questo è il contenuto in",
-    "despedida": "Buona forttuna con il progetto",
     "proyectos": "Progetti",
-    "tituloWriter": "Nuova sezione",
+    "tituloWriter": "Full Stack Developer",
     "texto1": "La tecnologia sta trasformando il modo in cui viviamo e lavoriamo. Dall'intelligenza artificiale alle energie rinnovabili, le innovazioni stanno rimodellando il nostro mondo a un ritmo accelerato. È essenziale rimanere informati e adattarsi a questi cambiamenti per sfruttare le opportunità che offrono.",
     "parrafo1": "L'innovazione è la chiave del progresso.",
     "parrafo2": "L'educazione apre le porte a nuove opportunità.",
     "parrafo3": "La cooperazione internazionale è vitale per la pace.",
     "quiensoy": "¿Chi sono?",
-    "idiomas": "Lingue"
+    "idiomas": "Lingue",
+    "formaTitle": "La mia formazione come"
 }
