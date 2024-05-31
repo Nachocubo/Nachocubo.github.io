@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //boton para subir
+    document.querySelector('#subir').addEventListener('click', (e) => {
+        window.scrollTo(0, 0);
+    });
+
     const contentElement = document.getElementById("content");
     const languageSelect = document.getElementById("language-select");
     let typeTimeout;
@@ -22,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para actualizar el contenido según el idioma seleccionado
     function updateContent(content) {
         const typewriterElement = document.getElementById("typewriter");
+        typewriterElement.style.fontStyle = 'italic';
         let index = 0;
         const text = content.tituloWriter;
         const velocidad = 150;
@@ -30,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const esLvl = 'C2';
         const enLvl = 'B2';
         const itLvl = 'A2';
-        
+
         /**
          * 
          * @param {number} level Nivel de idioma
@@ -38,39 +44,47 @@ document.addEventListener("DOMContentLoaded", function () {
          * @returns Porcentaje de idioma sobre 60%
          */
 
-        function operacion(level){
-            switch(level) {
+        function operacion(level) {
+            switch (level) {
                 case "A1":
-                    return 1/6 * 100;
+                    return 1 / 6 * 100;
                 case "A2":
-                    return 2/6 * 100;
+                    return 2 / 6 * 100;
                 case "B1":
-                    return 3/6 * 100;
+                    return 3 / 6 * 100;
                 case "B2":
-                    return 4/6 * 100;
+                    return 4 / 6 * 100;
                 case "C1":
-                    return 5/6 * 100;
+                    return 5 / 6 * 100;
                 case "C2":
-                    return 6/6 * 100;
+                    return 6 / 6 * 100;
             }
         }
 
+        //Texto de los enlaces del menú
+        document.querySelector('a[href="#separator-1"]').innerHTML = content.quiensoy;
+        document.querySelector('a[href="#proyectos"]').innerHTML = content.proyectos;
+        document.querySelector('a[href="#idiomas"]').innerHTML = content.idiomas;
+        document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5);
+
+        //Texto de los contenidos
         document.getElementById('separator-1').innerHTML = `<span>${content.quiensoy}</span><p>${content.texto1}</p>`;
-        document.getElementById('paragraph-1').innerHTML = content.parrafo1;
-        document.getElementById('paragraph-2').innerHTML = content.parrafo2;
-        document.getElementById('paragraph-3').innerHTML = content.parrafo3;
+        document.getElementById('paragraph-1').innerHTML = '1. ' + content.parrafo1;
+        document.getElementById('paragraph-2').innerHTML = '2. ' + content.parrafo2;
+        document.getElementById('paragraph-3').innerHTML = '3. ' + content.parrafo3;
         typewriterElement.innerHTML = '';
         document.querySelector('#proyectos').innerHTML = content.proyectos;
         document.querySelector('#idiomas').innerHTML = content.idiomas;
         document.querySelector('#formaTitle').innerHTML = content.formaTitle;
+        document.querySelector('.year-marker:last-child').setAttribute('data-year', content.actualidad);
 
         /*Nivel de idiomas */
         document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
-        document.querySelector('#es-bar .percentage').outerHTML += esLvl;
+        document.querySelector('#es-bar .percentage').outerHTML += `<span class="extremo">${esLvl}</span>`;
         document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
-        document.querySelector('#en-bar .percentage').outerHTML += enLvl;
+        document.querySelector('#en-bar .percentage').outerHTML += `<span class="extremo">${enLvl}</span>`;
         document.querySelector('#it-bar .percentage').style.width = operacion(itLvl) + '%';
-        document.querySelector('#it-bar .percentage').outerHTML += itLvl;
+        document.querySelector('#it-bar .percentage').outerHTML += `<span class="extremo">${itLvl}</span>`;
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);

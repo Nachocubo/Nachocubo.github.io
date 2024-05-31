@@ -7,6 +7,7 @@
     <title>Language Selector</title>
     <link rel="stylesheet" href="css/styles.scss">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -15,23 +16,24 @@
 
         <header>
             <ul>
-                <li><a href="#separator-1">Sobre mi</a></li>
-                <li><a href="#typewriter">Nueva seccion</a></li>
-                <li><a href="#idiomas">idiomas</a></li>
-                <li><a href="#proyectos">proyectos</a></li>
+                <li><a href="#separator-1"></a></li>
+                <li><a href="#formaTitle"></a></li>
+                <li><a href="#idiomas"></a></li>
+                <li><a href="#proyectos"></a></li>
             </ul>
 
             <select id="language-select">
-                <option value="es"
-                    data-img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png">
+                <option value="es" data-img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png">
                     Español
                 </option>
-                <option value="en"
-                    data-img-src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg">Inglés
+                <option value="en" data-img-src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg">
+                    Inglés
                 </option>
-                <option value="de" data-img-src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg">Alemán
+                <option value="de" data-img-src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg">
+                    Alemán
                 </option>
-                <option value="it" data-img-src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg">Italiano
+                <option value="it" data-img-src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg">
+                    Italiano
                 </option>
             </select>
         </header>
@@ -64,10 +66,20 @@
         <p id="paragraph-1"></p>
         <p id="paragraph-2"></p>
         <p id="paragraph-3"></p>
+        <!--LINEA DEL TIEMPO-->
+        <div class="timeline">
+            <div class="border-gradient"></div>
+            <div class="year-marker" data-year="2019"></div>
+            <div class="year-marker" data-year="2020"></div>
+            <div class="year-marker" data-year="2021"></div>
+            <div class="year-marker" data-year="2022"></div>
+            <div class="year-marker" data-year="2023"></div>
+            <div class="year-marker" data-year=""></div>
+        </div>
     </div>
 
-    <h3 id="idiomas"></h3>
     <div class="idiomas">
+        <h3 id="idiomas"></h3>
         <h4>Español</h4>
         <span id="es-bar" class="bar">
             <span class="percentage"></span>
@@ -82,46 +94,52 @@
         </span>
     </div>
 
-    <h3 id="proyectos"></h3>
     <div class="proyectos">
-        <!--Parte frontal de tarjeta-->
-        <div>
-            <div class="proy">
-                <span>Proyecto 1</span>
+        <h3 id="proyectos"></h3>
+        <div class="proy-div">
+            <div>
+                <!--Parte frontal de tarjeta-->
+                <div class="proy">
+                    <span>Proyecto 1</span>
+                </div>
+                <!--Parte trasera de tarjeta-->
+                <div class="oculta">
+                    <span>Contenido oculto</span>
+                </div>
             </div>
-            <!--Parte trasera de tarjeta-->
-            <div class="oculta">
-                <span>Contenido oculto</span>
+            <div>
+                <!--Parte frontal de tarjeta-->
+                <div class="proy">
+                    <span>Proyecto 2</span>
+                </div>
+                <!--Parte trasera de tarjeta-->
+                <div class="oculta">
+                    <span>Contenido oculto</span>
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="proy">
-                <span>Proyecto 2</span>
+            <div>
+                <!--Parte frontal de tarjeta-->
+                <div class="proy">
+                    <span>Proyecto 3</span>
+                </div>
+                <!--Parte trasera de tarjeta-->
+                <div class="oculta">
+                    <span>Contenido oculto</span>
+                </div>
             </div>
-            <!--Parte trasera de tarjeta-->
-            <div class="oculta">
-                <span>Contenido oculto</span>
-            </div>
-        </div>
-        <div>
-            <div class="proy">
-                <span>Proyecto 3</span>
-            </div>
-            <!--Parte trasera de tarjeta-->
-            <div class="oculta">
-                <span>Contenido oculto</span>
-            </div>
-        </div>
-        <div>
-            <div class="proy">
-                <span>Proyecto 4</span>
-            </div>
-            <!--Parte trasera de tarjeta-->
-            <div class="oculta">
-                <span>Contenido oculto</span>
+            <div>
+                <!--Parte frontal de tarjeta-->
+                <div class="proy">
+                    <span>Proyecto 4</span>
+                </div>
+                <!--Parte trasera de tarjeta-->
+                <div class="oculta">
+                    <span>Contenido oculto</span>
+                </div>
             </div>
         </div>
     </div>
+    <span id="subir" class="bi bi-chevron-up"></span>
     <script src="index.js"></script>
 </body>
 
