@@ -57,24 +57,47 @@ main {
 
     header {
 
-        select,
-        select option {
-            background-color: #151515;
-            color: white;
-        }
-    
-        select {
-            margin: 30px 5px;
+        .custom-select {
+            position: absolute;
             width: 200px;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 10px 3px #00cba9;
+            top: 10px;
+            right: 20px;
+            
+            .select-selected {
+                background-color: #151515;
+                border: 1px solid #ccc;
+                padding: 10px;
+                cursor: pointer;
+            }
+            
+            .select-items {
+                position: absolute;
+                background-color: #151515;
+                border: 1px solid #ccc;
+                border-top: none;
+                width: 100%;
+                z-index: 99;
+            }
+            
+            .select-hide {
+                display: none;
+            }
         }
-    
-        select:focus {
-            outline: none;
+        
+        .select-item {
+            padding: 10px;
+            cursor: pointer;
         }
+        
+        .select-item:hover {
+            background-color: #f3f3f330;
+        }
+        
+        
+        .select-arrow {
+            float: right;
+            margin-left: 10px;
+        }        
     
         ul {
             display: flex;

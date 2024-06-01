@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //boton para subir
+    // Botón para subir
     document.querySelector('#subir').addEventListener('click', (e) => {
         window.scrollTo(0, 0);
     });
 
     const contentElement = document.getElementById("content");
-    const languageSelect = document.getElementById("language-select");
+    const languageSelect = document.querySelector(".custom-select");
     let typeTimeout;
 
     // Función para cargar el archivo JSON
@@ -32,18 +32,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const text = content.tituloWriter;
         const velocidad = 150;
 
-        /*IDIOMAS*/
+        /* IDIOMAS */
         const esLvl = 'C2';
         const enLvl = 'B2';
         const itLvl = 'A2';
 
         /**
          * 
-         * @param {number} level Nivel de idioma
-         * @description Devuelve el nivel de idioma en porcentaje de 60, siendo así 10% -> A1, 20 -> A2... 60% -> C2
-         * @returns Porcentaje de idioma sobre 60%
+         * @param {string} level Nivel de idioma
+         * @description Devuelve el nivel de idioma en porcentaje de 60, siendo así 10% -> A1, 20% -> A2... 60% -> C2
+         * @returns {number} Porcentaje de idioma sobre 60%
          */
-
         function operacion(level) {
             switch (level) {
                 case "A1":
@@ -58,16 +57,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     return 5 / 6 * 100;
                 case "C2":
                     return 6 / 6 * 100;
+                default:
+                    return 0;
             }
         }
 
-        //Texto de los enlaces del menú
+        // Texto de los enlaces del menú
         document.querySelector('a[href="#separator-1"]').innerHTML = content.quiensoy;
         document.querySelector('a[href="#proyectos"]').innerHTML = content.proyectos;
         document.querySelector('a[href="#idiomas"]').innerHTML = content.idiomas;
         document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5);
 
-        //Texto de los contenidos
+        // Texto de los contenidos
         document.getElementById('separator-1').innerHTML = `<span>${content.quiensoy}</span><p>${content.texto1}</p>`;
         document.getElementById('paragraph-1').innerHTML = '1. ' + content.parrafo1;
         document.getElementById('paragraph-2').innerHTML = '2. ' + content.parrafo2;
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#formaTitle').innerHTML = content.formaTitle;
         document.querySelector('.year-marker:last-child').setAttribute('data-year', content.actualidad);
 
-        /*Nivel de idiomas */
+        /* Nivel de idiomas */
         document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
         document.querySelector('#es-bar .percentage').outerHTML += `<span class="extremo">${esLvl}</span>`;
         document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
@@ -115,25 +116,55 @@ document.addEventListener("DOMContentLoaded", function () {
         return localStorage.getItem('selectedLanguage');
     }
 
+    var customSelect = document.querySelector('.custom-select');
+    var selected = customSelect.querySelector('.select-selected');
+    var items = customSelect.querySelector('.select-items');
+
+    selected.addEventListener('click', function() {
+        items.classList.toggle('select-hide');
+        selected.classList.toggle('select-arrow-active');
+    });
+
+    customSelect.querySelectorAll('.select-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            selected.textContent = item.textContent;
+            selected.setAttribute('value', item.getAttribute('value'));
+            items.classList.add('select-hide');
+            selected.classList.remove('select-arrow-active');
+        });
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!customSelect.contains(event.target)) {
+            items.classList.add('select-hide');
+            selected.classList.remove('select-arrow-active');
+        }
+    });
+
     // Carga inicial del archivo JSON
     loadJSON('indice.json', function (paths) {
         function loadContent() {
-            loadJSON(paths[languageSelect.value], function (content) {
+            loadJSON(paths[selected.getAttribute('value')], function (content) {
                 updateContent(content);
             });
         }
 
         // Establece el idioma seleccionado desde el localStorage si existe
         const savedLanguage = loadLanguageSelection();
-        if (savedLanguage && languageSelect.querySelector(`option[value="${savedLanguage}"]`)) {
-            languageSelect.value = savedLanguage;
+        if (savedLanguage) {
+            const item = Array.from(languageSelect.querySelectorAll('.select-item')).find(item => item.getAttribute('value') === savedLanguage);
+            if (item) {
+                item.click();
+            }
         }
 
         loadContent();
 
-        languageSelect.addEventListener("change", function () {
-            saveLanguageSelection(languageSelect.value);
-            loadContent();
+        languageSelect.querySelectorAll('.select-item').forEach(item => {
+            item.addEventListener('click', function () {
+                saveLanguageSelection(item.getAttribute('value'));
+                loadContent();
+            });
         });
     });
 });
