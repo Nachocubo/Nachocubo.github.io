@@ -24,6 +24,44 @@ document.addEventListener("DOMContentLoaded", function () {
         xhr.send(null);
     }
 
+    /* IDIOMAS */
+    const esLvl = 'C2';
+    const enLvl = 'B2';
+    const itLvl = 'A2';
+
+    /**
+     * 
+     * @param {string} level Nivel de idioma
+     * @description Devuelve el nivel de idioma en porcentaje de 60, siendo así 10% -> A1, 20% -> A2... 60% -> C2
+     * @returns {number} Porcentaje de idioma sobre 60%
+     */
+    function operacion(level) {
+        switch (level) {
+            case "A1":
+                return 1 / 6 * 100;
+            case "A2":
+                return 2 / 6 * 100;
+            case "B1":
+                return 3 / 6 * 100;
+            case "B2":
+                return 4 / 6 * 100;
+            case "C1":
+                return 5 / 6 * 100;
+            case "C2":
+                return 6 / 6 * 100;
+            default:
+                return 0;
+        }
+    }
+
+    /* Nivel de idiomas */
+    document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
+    document.querySelector('#es-bar .percentage').innerHTML += `<span class="extremo">${esLvl}</span>`;
+    document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
+    document.querySelector('#en-bar .percentage').innerHTML += `<span class="extremo">${enLvl}</span>`;
+    document.querySelector('#it-bar .percentage').style.width = operacion(itLvl) + '%';
+    document.querySelector('#it-bar .percentage').innerHTML += `<span class="extremo">${itLvl}</span>`;
+
     // Función para actualizar el contenido según el idioma seleccionado
     function updateContent(content) {
         const typewriterElement = document.getElementById("typewriter");
@@ -31,36 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let index = 0;
         const text = content.tituloWriter;
         const velocidad = 150;
-
-        /* IDIOMAS */
-        const esLvl = 'C2';
-        const enLvl = 'B2';
-        const itLvl = 'A2';
-
-        /**
-         * 
-         * @param {string} level Nivel de idioma
-         * @description Devuelve el nivel de idioma en porcentaje de 60, siendo así 10% -> A1, 20% -> A2... 60% -> C2
-         * @returns {number} Porcentaje de idioma sobre 60%
-         */
-        function operacion(level) {
-            switch (level) {
-                case "A1":
-                    return 1 / 6 * 100;
-                case "A2":
-                    return 2 / 6 * 100;
-                case "B1":
-                    return 3 / 6 * 100;
-                case "B2":
-                    return 4 / 6 * 100;
-                case "C1":
-                    return 5 / 6 * 100;
-                case "C2":
-                    return 6 / 6 * 100;
-                default:
-                    return 0;
-            }
-        }
 
         // Texto de los enlaces del menú
         document.querySelector('a[href="#separator-1"]').innerHTML = content.quiensoy;
@@ -76,16 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
         typewriterElement.innerHTML = '';
         document.querySelector('#proyectos').innerHTML = content.proyectos;
         document.querySelector('#idiomas').innerHTML = content.idiomas;
+        document.querySelectorAll('.idiomas h4')[0].innerHTML = content.español;
+        document.querySelectorAll('.idiomas h4')[1].innerHTML = content.ingles;
+        document.querySelectorAll('.idiomas h4')[2].innerHTML = content.italiano;
         document.querySelector('#formaTitle').innerHTML = content.formaTitle;
         document.querySelector('.year-marker:last-child').setAttribute('data-year', content.actualidad);
-
-        /* Nivel de idiomas */
-        document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
-        document.querySelector('#es-bar .percentage').outerHTML += `<span class="extremo">${esLvl}</span>`;
-        document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
-        document.querySelector('#en-bar .percentage').outerHTML += `<span class="extremo">${enLvl}</span>`;
-        document.querySelector('#it-bar .percentage').style.width = operacion(itLvl) + '%';
-        document.querySelector('#it-bar .percentage').outerHTML += `<span class="extremo">${itLvl}</span>`;
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);
@@ -120,24 +123,21 @@ document.addEventListener("DOMContentLoaded", function () {
     var selected = customSelect.querySelector('.select-selected');
     var items = customSelect.querySelector('.select-items');
 
-    selected.addEventListener('click', function() {
+    selected.addEventListener('click', function () {
         items.classList.toggle('select-hide');
-        selected.classList.toggle('select-arrow-active');
     });
 
-    customSelect.querySelectorAll('.select-item').forEach(function(item) {
-        item.addEventListener('click', function() {
-            selected.textContent = item.textContent;
+    customSelect.querySelectorAll('.select-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+            selected.innerHTML = item.innerHTML;
             selected.setAttribute('value', item.getAttribute('value'));
             items.classList.add('select-hide');
-            selected.classList.remove('select-arrow-active');
         });
     });
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         if (!customSelect.contains(event.target)) {
             items.classList.add('select-hide');
-            selected.classList.remove('select-arrow-active');
         }
     });
 

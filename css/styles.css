@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +10,7 @@ html {
 
 ::-webkit-scrollbar {
   background: none;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #00cba9;
-  border-radius: 20px;
-  border: 5px solid black;
+  width: 0;
 }
 
 body {
@@ -23,7 +19,6 @@ body {
   background-color: #151515;
   color: white;
 }
-
 body > div:not(#separator-1) {
   margin: 50px 0;
 }
@@ -54,59 +49,86 @@ h4 {
   font-size: 3vw;
 }
 
-header select,
-header select option {
-  background-color: #151515;
-  color: white;
+main {
+  position: relative;
+  min-height: 100vh;
 }
-
-header select {
-  margin: 30px 5px;
+main header .custom-select {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   width: 200px;
-  padding: 15px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 10px 3px #00cba9;
+  top: 10px;
+  right: 20px;
 }
-
-header select:focus {
-  outline: none;
+main header .custom-select img {
+  height: 20px;
 }
-
-header ul {
+main header .custom-select .select-selected {
+  background-color: #151515;
+  border: 1px solid #ccc;
+}
+main header .custom-select .select-selected, main header .custom-select .select-item {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+main header .custom-select .select-items {
+  position: absolute;
+  background-color: #151515;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 100%;
+  z-index: 99;
+}
+main header .custom-select .select-items .select-item:hover {
+  background-color: rgba(243, 243, 243, 0.1882352941);
+}
+main header .custom-select .select-hide {
+  display: none;
+}
+main header ul {
   display: flex;
   justify-content: center;
   list-style: none;
   height: 60px;
 }
-header ul li {
+main header ul li {
   display: flex;
   align-items: center;
   border-radius: 10px;
 }
-header ul li a {
+main header ul li a {
   text-decoration: none;
-  background: linear-gradient(90deg, rgba(0, 203, 169, 0.1882352941), #00cba9, #0099ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #00cba9;
   font-weight: 100;
   padding: 10px 20px;
   font-size: 2vw;
 }
-header ul li:hover {
+main header ul li:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-main {
-  position: relative;
-  min-height: 100vh;
+main .social {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 50%;
+  width: 100%;
 }
-
-.decor svg {
+main .social a {
+  color: white;
+  font-size: 35pt;
+  z-index: 3;
+}
+main .social a i {
+  opacity: 0.3;
+  font-size: 30pt;
+}
+main .social a i:hover {
+  opacity: 1;
+  font-size: 32pt;
+  transition: all 500ms 0s;
+}
+main .decor svg {
   position: absolute;
   bottom: 0;
 }
@@ -119,14 +141,52 @@ main {
   padding: 10px 50px;
   text-align: justify;
 }
-
 .textDiv p {
   margin: 20px 0;
+}
+.textDiv .timeline {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.textDiv .timeline .border-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0, 203, 169, 0.1882352941), #00cba9, #0099ff);
+}
+.textDiv .timeline .year-marker {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.textDiv .timeline .year-marker::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 20px;
+  width: 2px;
+  background-color: #00cba9;
+}
+.textDiv .timeline .year-marker::after {
+  content: attr(data-year);
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #fff;
 }
 
 .typewriter {
   width: max-content;
-  height: 200px;
+  height: max-content;
   margin: 0 auto;
   white-space: nowrap;
   overflow: hidden;
@@ -140,36 +200,42 @@ main {
   flex-direction: column;
   gap: 10px;
 }
-
 .idiomas h4 {
   position: relative;
   /* bottom: -40px; */
   font-weight: 400;
 }
-
-.idiomas > span .percentage {
-  background: linear-gradient(90deg, rgba(0, 203, 169, 0.1882352941), #00cba9, #0099ff);
-  height: 100%;
-  display: block;
-}
-
 .idiomas > span {
   position: relative;
   width: 50vw;
   height: 20px;
   margin: 15px auto;
   float: left;
+  font-size: 8pt;
+}
+.idiomas > span .percentage {
+  background: linear-gradient(90deg, rgba(0, 203, 169, 0.1882352941), #00cba9, #0099ff);
+  height: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
 }
 
 .proyectos {
   padding: 10px 50px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-
-.proyectos > div {
+.proyectos .proy-div {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.proyectos .proy-div > div {
+  display: block;
   position: relative;
   width: 300px;
   height: 200px;
@@ -178,24 +244,47 @@ main {
   overflow: hidden;
   font-size: x-large;
 }
-
-.proyectos > div .proy,
-.proyectos > div .oculta {
+.proyectos .proy-div > div .proy,
+.proyectos .proy-div > div .oculta {
   position: absolute;
   width: 100%;
   min-height: 100%;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
 }
-
-.proyectos > div .proy {
+.proyectos .proy-div > div .proy {
   opacity: 0.7;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.proyectos > div .oculta {
+.proyectos .proy-div > div .oculta {
   opacity: 0;
+}
+
+#subir {
+  font-size: 20pt;
+  padding: 5px 10px;
+  border: 1px solid #00cba9;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(0, 203, 169, 0.1882352941), #00cba9, #0099ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
+#subir:hover {
+  cursor: pointer;
+  background: #00cba9;
+  color: #151515;
+}
+
+#subir .bi {
+  font-weight: bold;
+  font-size: 24px;
 }
 
 @keyframes blink {
