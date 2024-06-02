@@ -78,9 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Texto de los contenidos
         document.getElementById('separator-1').innerHTML = `<span>${content.quiensoy}</span><p>${content.texto1}</p>`;
-        document.getElementById('paragraph-1').innerHTML = '1. ' + content.parrafo1;
-        document.getElementById('paragraph-2').innerHTML = '2. ' + content.parrafo2;
-        document.getElementById('paragraph-3').innerHTML = '3. ' + content.parrafo3;
+        document.getElementById('paragraph-1').innerHTML = content.parrafo1;
+        document.getElementById('paragraph-2').innerHTML = `<ul><li>${content.parrafo2}</li><li>${content.parrafo3}</li>`;
         typewriterElement.innerHTML = '';
         document.querySelector('#proyectos').innerHTML = content.proyectos;
         document.querySelector('#idiomas').innerHTML = content.idiomas;
