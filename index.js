@@ -80,6 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('separator-1').innerHTML = `<span>${content.quiensoy}</span><p>${content.texto1}</p>`;
         document.getElementById('paragraph-1').innerHTML = content.parrafo1;
         document.getElementById('paragraph-2').innerHTML = `<ul><li>${content.parrafo2}</li><li>${content.parrafo3}</li>`;
+        document.getElementById('paragraph-tra-1').innerHTML = content.trabajo1;
+        document.getElementById('paragraph-tra-2').innerHTML = `<ul><li>${content.trabajo2}</li><li>${content.trabajo3}</li>`;
         typewriterElement.innerHTML = '';
         document.querySelector('#proyectos').innerHTML = content.proyectos;
         document.querySelector('#idiomas').innerHTML = content.idiomas;
@@ -88,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('.idiomas h4')[2].innerHTML = content.italiano;
         document.querySelector('#formaTitle').innerHTML = content.formaTitle;
         document.querySelector('.year-marker:last-child').setAttribute('data-year', content.actualidad);
+        document.querySelector('#trabaTitle').innerHTML = content.trabaTitle;
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);
