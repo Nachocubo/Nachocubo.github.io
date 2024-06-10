@@ -62,11 +62,23 @@ main header .custom-select {
 main header .custom-select img {
   height: 20px;
 }
+main header .custom-select .select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 16px;
+}
 main header .custom-select .select-selected {
   background-color: #151515;
   border: 1px solid #ccc;
 }
-main header .custom-select .select-selected, main header .custom-select .select-item {
+main header .custom-select .select-selected img {
+  margin-right: 20px;
+}
+main header .custom-select .select-selected,
+main header .custom-select .select-item {
   padding: 10px;
   cursor: pointer;
   display: flex;
@@ -141,35 +153,55 @@ main .decor svg {
   padding: 10px 50px;
   text-align: justify;
 }
-.textDiv p {
-  margin: 20px 0;
-}
 .textDiv .timeline {
   position: relative;
   margin: 0 auto;
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  min-height: 100vh;
+  overflow: auto;
 }
 .textDiv .timeline .border-gradient {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
+  top: 20px;
+  left: 50%;
+  width: 2px;
+  height: 100vh;
   background: linear-gradient(90deg, rgba(0, 203, 169, 0.1882352941), #00cba9, #0099ff);
 }
 .textDiv .timeline .year-marker {
   position: relative;
-  text-align: center;
-  cursor: pointer;
+}
+.textDiv .timeline .year-marker .nota {
+  position: absolute;
+  display: block;
+  left: 50px;
+  width: 400px;
+  border: 1px solid #00cba9;
+  padding: 20px;
+  border-radius: 20px;
+}
+.textDiv .timeline .year-marker .nota ul {
+  list-style-type: none;
+}
+.textDiv .timeline .year-marker .nota ul li {
+  position: relative;
+  padding-left: 20px;
+}
+.textDiv .timeline .year-marker .nota ul li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
 }
 .textDiv .timeline .year-marker::before {
   content: "";
   position: absolute;
   top: -10px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: rotate(90deg);
   height: 20px;
   width: 2px;
   background-color: #00cba9;
@@ -177,9 +209,9 @@ main .decor svg {
 .textDiv .timeline .year-marker::after {
   content: attr(data-year);
   position: absolute;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -10px;
+  left: 0;
+  transform: translateX(-50px);
   font-size: 12px;
   color: #fff;
 }
@@ -187,6 +219,7 @@ main .decor svg {
 .typewriter {
   width: max-content;
   height: max-content;
+  min-height: 50px;
   margin: 0 auto;
   white-space: nowrap;
   overflow: hidden;
