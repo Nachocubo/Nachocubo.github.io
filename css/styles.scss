@@ -181,13 +181,15 @@ main {
     }
     img{
         height: 400px;
-        filter: grayscale(.5);
+        filter: grayscale(.7);
     }
 }
 
 .textDiv {
     padding: 10px 50px;
     text-align: justify;
+    max-height: 300px;
+    overflow: hidden;
 
     .timeline {
         position: relative;

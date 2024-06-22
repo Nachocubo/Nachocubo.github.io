@@ -77,7 +77,24 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5);
 
         // Texto de los contenidos
-        document.getElementById('separator-1').innerHTML = `<img src="img/foto-perfil-recortada.png" alt="Nacho cubo"><div><span>${content.quiensoy}</span><ul>${content.texto1}</ul></div>`;
+        var sobre = document.getElementById('separator-1');
+        sobre.innerHTML = `<img src="img/foto-perfil-recortada.png" alt="Nacho cubo">`;
+
+        var divCont = document.createElement('div');
+
+        var ini = document.createElement('span');
+        ini.textContent = content.quiensoy;
+        divCont.appendChild(ini);
+
+        var lista = document.createElement('ul');
+        content.descripcion.forEach(elem => {
+            var listLi = document.createElement('li');
+            listLi.textContent = elem;
+            lista.appendChild(listLi);
+        })
+        divCont.appendChild(lista);
+        sobre.appendChild(divCont);
+
         document.getElementById('paragraph-1').innerHTML = content.parrafo1;
         document.getElementById('paragraph-2').innerHTML = `<ul><li>${content.parrafo2}</li><li>${content.parrafo3}</li>`;
         document.getElementById('paragraph-tra-1').innerHTML = content.trabajo1;

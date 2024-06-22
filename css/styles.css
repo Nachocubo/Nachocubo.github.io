@@ -158,12 +158,14 @@ main .decor svg {
 }
 .separator1 img {
   height: 400px;
-  filter: grayscale(0.5);
+  filter: grayscale(0.7);
 }
 
 .textDiv {
   padding: 10px 50px;
   text-align: justify;
+  max-height: 300px;
+  overflow: hidden;
 }
 .textDiv .timeline {
   position: relative;

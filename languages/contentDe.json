@@ -1,7 +1,12 @@
 {
     "proyectos": "Projekts",
     "tituloWriter": "Full Stack Developer",
-    "texto1": "Autodidakt, neugierig, sprach- und lesebegeistert.", 
+    "descripcion": [
+        "Autodidakt",
+        "neugierig",
+        "sprach- und lesebegeistert",
+        "in meiner freizeit, Schriftstellerin"
+    ],
     "parrafo1": "Mittlerer Bildungszyklus in Mikrocomputer- und Netzwerksystemen (2019-2021)",
     "parrafo2": "Höherer Bildungszyklus in der Entwicklung von Webanwendungen (2022-2024)",
     "parrafo3": "Online-Kurse autodidaktisch (2019-heute)",

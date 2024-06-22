@@ -1,7 +1,12 @@
 {
     "proyectos": "Projects",
     "tituloWriter": "Full Stack Developer",
-    "texto1": "Self-taught, curious, lover of languages and reading.", 
+    "descripcion": [
+        "Self-taught",
+        "curious",
+        "lover of languages and reading",
+        "in my free time, writer"
+    ],
     "parrafo1": "Intermediate Vocational Training in Microcomputer Systems and Networks (2019-2021)",
     "parrafo2": "Advanced Vocational Training in Web Application Development (2022-2024)",
     "parrafo3": "Self-taught online courses (2019-present)",

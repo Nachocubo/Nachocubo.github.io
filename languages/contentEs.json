@@ -1,7 +1,12 @@
 {
     "proyectos": "Proyectos",
     "tituloWriter": "Full Stack Developer",
-    "texto1": "<li>Autodidacta</li><li>curioso</li><li>amante de los idiomas y de la lectura</li>",
+    "descripcion": [
+        "Autodidacta",
+        "curioso",
+        "amante de los idiomas y de la lectura",
+        "en mis tiempos libres, escritor"
+    ],
     "parrafo1": "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes (2019-2021)",
     "parrafo2": "Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (2022-2024)",
     "parrafo3": "Cursos online de forma autodidacta (2019-actualidad)",
