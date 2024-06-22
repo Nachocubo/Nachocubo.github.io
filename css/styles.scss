@@ -171,6 +171,18 @@ main {
 
 .separator1 {
     background-color: #0099ff;
+    display: flex;
+    justify-content: center;
+    div ul{
+        padding: 20px;
+        ::first-letter{
+            text-transform: uppercase;
+        }
+    }
+    img{
+        height: 400px;
+        filter: grayscale(.5);
+    }
 }
 
 .textDiv {

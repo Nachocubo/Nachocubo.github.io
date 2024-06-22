@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5);
 
         // Texto de los contenidos
-        document.getElementById('separator-1').innerHTML = `<span>${content.quiensoy}</span><p>${content.texto1}</p>`;
+        document.getElementById('separator-1').innerHTML = `<img src="img/foto-perfil-recortada.png" alt="Nacho cubo"><div><span>${content.quiensoy}</span><ul>${content.texto1}</ul></div>`;
         document.getElementById('paragraph-1').innerHTML = content.parrafo1;
         document.getElementById('paragraph-2').innerHTML = `<ul><li>${content.parrafo2}</li><li>${content.parrafo3}</li>`;
         document.getElementById('paragraph-tra-1').innerHTML = content.trabajo1;

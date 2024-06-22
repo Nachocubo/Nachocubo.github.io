@@ -147,6 +147,18 @@ main .decor svg {
 
 .separator1 {
   background-color: #0099ff;
+  display: flex;
+  justify-content: center;
+}
+.separator1 div ul {
+  padding: 20px;
+}
+.separator1 div ul ::first-letter {
+  text-transform: uppercase;
+}
+.separator1 img {
+  height: 400px;
+  filter: grayscale(0.5);
 }
 
 .textDiv {
@@ -326,6 +338,14 @@ main .decor svg {
   }
   50% {
     border-color: white;
+  }
+}
+@media screen and (max-width: 400px) {
+  h1 {
+    padding: 50px;
+  }
+  #typewriter {
+    max-width: 400px;
   }
 }
 
