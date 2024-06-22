@@ -373,3 +373,13 @@ main {
         border-color: white;
     }
 }
+
+@media screen and (max-width: 400px) {
+    h1 {
+        padding: 50px;
+    }
+
+    #typewriter{
+        max-width: 400px;
+    }
+}
