@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('paragraph-tra-1').innerHTML = content.trabajo1;
         document.getElementById('paragraph-tra-2').innerHTML = `<ul><li>${content.trabajo2}</li><li>${content.trabajo3}</li>`;
         typewriterElement.innerHTML = '';
-        document.querySelector('#proyectos').innerHTML = content.proyectos;
+        /* document.querySelector('#proyectos').innerHTML = content.proyectos; */
         document.querySelector('#idiomas').innerHTML = content.idiomas;
         document.querySelectorAll('.idiomas h4')[0].innerHTML = content.español;
         document.querySelectorAll('.idiomas h4')[1].innerHTML = content.ingles;
@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#formaTitle').innerHTML = content.formaTitle;
         document.querySelector('.year-marker:last-child').setAttribute('data-year', content.actualidad);
         document.querySelector('#trabaTitle').innerHTML = content.trabaTitle;
+        document.querySelector('#copy').innerHTML = '&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);

@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -18,9 +19,6 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #151515;
   color: white;
-}
-body > div:not(#separator-1) {
-  margin: 50px 0;
 }
 
 h1,
@@ -52,17 +50,18 @@ h4 {
 main {
   position: relative;
   min-height: 100vh;
+  border-top: 1px solid black; /*prevee que el select se baje*/
+  padding-top: 20px;
 }
-main header .custom-select {
+main .custom-select {
   position: absolute;
   width: 200px;
-  top: 10px;
   right: 20px;
 }
-main header .custom-select img {
+main .custom-select img {
   height: 20px;
 }
-main header .custom-select .select-arrow {
+main .custom-select .select-arrow {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -70,21 +69,21 @@ main header .custom-select .select-arrow {
   pointer-events: none;
   font-size: 16px;
 }
-main header .custom-select .select-selected {
+main .custom-select .select-selected {
   background-color: #151515;
   border: 1px solid #ccc;
 }
-main header .custom-select .select-selected img {
+main .custom-select .select-selected img {
   margin-right: 20px;
 }
-main header .custom-select .select-selected,
-main header .custom-select .select-item {
+main .custom-select .select-selected,
+main .custom-select .select-item {
   padding: 10px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
 }
-main header .custom-select .select-items {
+main .custom-select .select-items {
   position: absolute;
   background-color: #151515;
   border: 1px solid #ccc;
@@ -92,10 +91,10 @@ main header .custom-select .select-items {
   width: 100%;
   z-index: 99;
 }
-main header .custom-select .select-items .select-item:hover {
+main .custom-select .select-items .select-item:hover {
   background-color: rgba(243, 243, 243, 0.1882352941);
 }
-main header .custom-select .select-hide {
+main .custom-select .select-hide {
   display: none;
 }
 main header ul {
@@ -163,9 +162,17 @@ main .decor svg {
 
 .textDiv {
   padding: 10px 50px;
-  text-align: justify;
-  max-height: 300px;
+}
+.textDiv .typewriter {
+  width: max-content;
+  height: max-content;
+  min-height: 50px;
+  margin: 0 auto;
+  white-space: nowrap;
   overflow: hidden;
+  border-right: 7px solid;
+  padding-right: 20px;
+  animation: blink 1s ease-in infinite;
 }
 .textDiv .timeline {
   position: relative;
@@ -191,7 +198,6 @@ main .decor svg {
 }
 .textDiv .timeline .year-marker .nota {
   position: absolute;
-  display: block;
   left: 50px;
   width: 400px;
   border: 1px solid #00cba9;
@@ -228,18 +234,6 @@ main .decor svg {
   transform: translateX(-50px);
   font-size: 12px;
   color: #fff;
-}
-
-.typewriter {
-  width: max-content;
-  height: max-content;
-  min-height: 50px;
-  margin: 0 auto;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 7px solid;
-  padding-right: 20px;
-  animation: blink 1s ease-in infinite;
 }
 
 .idiomas {
@@ -334,6 +328,13 @@ main .decor svg {
   font-size: 24px;
 }
 
+#copy {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
 @keyframes blink {
   from, to {
     border-color: transparent;
@@ -342,12 +343,9 @@ main .decor svg {
     border-color: white;
   }
 }
-@media screen and (max-width: 400px) {
-  h1 {
-    padding: 50px;
-  }
-  #typewriter {
-    max-width: 400px;
+@media screen and (width < 1000px) {
+  main header {
+    margin-top: 50px;
   }
 }
 
