@@ -106,7 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('.idiomas h4')[1].innerHTML = content.ingles;
         document.querySelectorAll('.idiomas h4')[2].innerHTML = content.italiano;
         document.querySelector('#formaTitle').innerHTML = content.formaTitle;
-        document.querySelector('.year-marker:last-child').setAttribute('data-year', content.actualidad);
+        document.querySelectorAll('.year-marker:last-child').forEach(elem => {
+            elem.setAttribute('data-year', content.actualidad);
+        })
         document.querySelector('#trabaTitle').innerHTML = content.trabaTitle;
         document.querySelector('#copy').innerHTML = '&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
 
