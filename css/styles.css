@@ -182,7 +182,7 @@ main .decor svg {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  overflow: auto;
+  overflow-y: auto;
 }
 .textDiv .timeline .border-gradient {
   position: absolute;
@@ -197,7 +197,7 @@ main .decor svg {
 }
 .textDiv .timeline .year-marker .punto {
   position: absolute;
-  left: 0;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: #151515;
   width: 30px;
@@ -209,17 +209,14 @@ main .decor svg {
   background-color: #00cba9;
   cursor: pointer;
 }
-.textDiv .timeline .year-marker .punto:hover ~ .nota {
-  display: block;
-}
 .textDiv .timeline .year-marker .nota {
   position: absolute;
-  left: 50px;
-  width: 400px;
+  left: 50%;
+  width: max-content;
   border: 1px solid #00cba9;
   padding: 20px;
   border-radius: 20px;
-  display: none;
+  display: block;
 }
 .textDiv .timeline .year-marker .nota ul {
   list-style-type: none;
@@ -374,6 +371,10 @@ main .decor svg {
   }
   main header ul li a {
     font-size: 4vw !important;
+  }
+  .nota {
+    left: 0;
+    width: 200px;
   }
 }
 

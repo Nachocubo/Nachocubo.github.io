@@ -1,3 +1,21 @@
+if (!isProduction) {
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    document.body.insertAdjacentElement("afterbegin", input);
+
+    input.addEventListener('change', () => {
+        if (input.checked) {
+            document.querySelectorAll('*').forEach(el => {
+                el.style.border = '1px solid red';
+            });
+        } else {
+            document.querySelectorAll('*').forEach(el => {
+                el.style.border = '';
+            });
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // Botón para subir
     document.querySelector('#subir').addEventListener('click', (e) => {
