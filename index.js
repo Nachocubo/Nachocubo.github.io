@@ -2,8 +2,12 @@ if (!isProduction) {
     const input = document.createElement('input');
     input.type = 'checkbox';
     document.body.insertAdjacentElement("afterbegin", input);
-
+    const label = document.createElement('label');
+    label.textContent = 'Modo desarrollo: ' + input.checked;
+    input.insertAdjacentElement('afterend', label);
+    
     input.addEventListener('change', () => {
+        label.textContent = 'Modo desarrollo: ' + input.checked;
         if (input.checked) {
             document.querySelectorAll('*').forEach(el => {
                 el.style.border = '1px solid red';
@@ -135,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function type() {
+            //establece la altura minima del typewriter a la altura que debe tener como minimo de forma dinamica
+            typewriterElement.style.minHeight = document.querySelector('header > h1').clientHeight + 'px';
             if (index < text.length) {
                 typewriterElement.innerHTML += text[index];
                 index++;
