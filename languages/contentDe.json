@@ -1,5 +1,8 @@
 {
-    "proyectos": "Projekts",
+    "proyectos": {
+        "title": "Projekts",
+        "collection": {}
+    },
     "tituloWriter": "Full Stack Developer",
     "descripcion": [
         "Autodidakt",
@@ -18,8 +21,9 @@
     "español": "Spanisch",
     "ingles": "Englisch",
     "italiano": "Italienisch",
-    "formaTitle": "Meine Ausbildung als",
+    "formaTitle": "Meine Ausbildung als ",
     "trabaTitle": "Berufsleben",
     "actualidad": "Heute",
-    "copy": "Alle rechten voorbehouden"
+    "copy": "Alle rechten voorbehouden",
+    "lenguajes": "Programmiersprachen"
 }

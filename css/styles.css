@@ -276,6 +276,26 @@ main .decor svg {
   padding-right: 5px;
 }
 
+.lenguajes {
+  display: flex;
+  flex-direction: column;
+}
+.lenguajes ul {
+  margin: 0 auto;
+  list-style: none;
+}
+.lenguajes ul li {
+  line-height: 30pt;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.lenguajes ul li img {
+  height: 20px;
+  margin-left: 10px;
+  filter: grayscale(1);
+}
+
 .proyectos {
   padding: 10px 50px;
   display: flex;

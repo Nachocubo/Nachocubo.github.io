@@ -94,9 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Texto de los enlaces del menú
         document.querySelector('a[href="#separator-1"]').innerHTML = content.quiensoy;
-        document.querySelector('a[href="#proyectos"]').innerHTML = content.proyectos;
+        console.log(content.proyectos);
+        document.querySelector('a[href="#proyectos"]').innerHTML = content.proyectos.title;
         document.querySelector('a[href="#idiomas"]').innerHTML = content.idiomas;
-        document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5);
+        document.querySelector('a[href="#lenguajes"]').innerHTML = content.lenguajes; 
+        document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5); 
 
         // Texto de los contenidos
         var sobre = document.getElementById('separator-1');
@@ -122,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('paragraph-tra-1').innerHTML = content.trabajo1;
         document.getElementById('paragraph-tra-2').innerHTML = `<ul><li>${content.trabajo2}</li><li>${content.trabajo3}</li>`;
         typewriterElement.innerHTML = '';
-        /* document.querySelector('#proyectos').innerHTML = content.proyectos; */
+        document.querySelector('#proyectos').innerHTML = content.proyectos.title;
         document.querySelector('#idiomas').innerHTML = content.idiomas;
         document.querySelectorAll('.idiomas h4')[0].innerHTML = content.español;
         document.querySelectorAll('.idiomas h4')[1].innerHTML = content.ingles;
@@ -132,7 +134,12 @@ document.addEventListener("DOMContentLoaded", function () {
             elem.setAttribute('data-year', content.actualidad);
         })
         document.querySelector('#trabaTitle').innerHTML = content.trabaTitle;
+        document.querySelector('#lenguajes').innerHTML = content.lenguajes;
         document.querySelector('#copy').innerHTML = '&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
+
+        if (Object.keys(content.proyectos.collection).length == 0) {
+            document.querySelector('.proy-div').innerHTML = '<p>Comming soon</p>';
+        }
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);
