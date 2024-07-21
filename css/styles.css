@@ -308,7 +308,7 @@ main .decor svg {
   flex-wrap: wrap;
   justify-content: center;
 }
-.proyectos .proy-div > div {
+.proyectos .proy-div .proyecto {
   display: block;
   position: relative;
   width: 300px;
@@ -318,22 +318,17 @@ main .decor svg {
   overflow: hidden;
   font-size: x-large;
 }
-.proyectos .proy-div > div .proy,
-.proyectos .proy-div > div .oculta {
+.proyectos .proy-div .proyecto .proy,
+.proyectos .proy-div .proyecto .oculta {
   position: absolute;
   width: 100%;
   min-height: 100%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
-}
-.proyectos .proy-div > div .proy {
-  opacity: 0.7;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.proyectos .proy-div > div .oculta {
-  opacity: 0;
+  opacity: 0.7;
 }
 
 #subir {

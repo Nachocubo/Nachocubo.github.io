@@ -137,9 +137,50 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#lenguajes').innerHTML = content.lenguajes;
         document.querySelector('#copy').innerHTML = '&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
 
+        /*
+        *PROYECTOS
+        */
+        
         if (Object.keys(content.proyectos.collection).length == 0) {
             document.querySelector('.proy-div').innerHTML = '<p>Comming soon</p>';
+        } else {
+            content.proyectos.collection.forEach((proy, index) => {
+                document.querySelector('.proy-div').innerHTML += `<div class="proyecto"><div class="proy"><span>${proy['proyecto' + parseInt(index+1)].title}</span></div></div>`;
+            })
         }
+
+        var proyecto = document.querySelectorAll('.proyecto');
+        var isHovered = false;
+    
+        proyecto.forEach((proy, index) => {
+            if (proy && proy.children[0]) {
+                proy.addEventListener('click', () => {
+                    window.open(content.proyectos.collection[index].url, '_blank');
+                });
+
+                proy.addEventListener('mouseover', () => {
+                    if (!isHovered) {
+                        isHovered = true;
+                        proy.children[0].classList.remove('proy');
+                        proy.children[0].classList.add('oculta');
+                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index+1)].description}</span>`;
+                    }
+                });
+        
+                proy.addEventListener('mouseout', () => {
+                    if (isHovered) {
+                        isHovered = false;
+                        proy.children[0].classList.remove('oculta');
+                        proy.children[0].classList.add('proy');
+                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index+1)].title}</span>`;
+                    }
+                });
+            }
+        })
+
+        /*
+        *Efecto escritura de titulo
+        */
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);
@@ -163,6 +204,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         type();
     }
+
+    /* 
+    * Dinamismo del lenguaje
+    */
 
     function saveLanguageSelection(language) {
         localStorage.setItem('selectedLanguage', language);

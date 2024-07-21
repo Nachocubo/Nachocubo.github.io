@@ -345,7 +345,7 @@ main {
         flex-wrap: wrap;
         justify-content: center;
 
-        >div {
+        .proyecto {
             display: block;
             position: relative;
             width: 300px;
@@ -362,17 +362,10 @@ main {
                 min-height: 100%;
                 text-align: center;
                 background-color: rgba(255, 255, 255, .2);
-            }
-
-            .proy {
-                opacity: .7;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-            }
-
-            .oculta {
-                opacity: 0;
+                opacity: .7;
             }
         }
     }
