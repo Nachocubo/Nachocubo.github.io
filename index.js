@@ -5,7 +5,7 @@ if (!isProduction) {
     const label = document.createElement('label');
     label.textContent = 'Modo desarrollo: ' + input.checked;
     input.insertAdjacentElement('afterend', label);
-    
+
     input.addEventListener('change', () => {
         label.textContent = 'Modo desarrollo: ' + input.checked;
         if (input.checked) {
@@ -94,11 +94,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Texto de los enlaces del menú
         document.querySelector('a[href="#separator-1"]').innerHTML = content.quiensoy;
-        console.log(content.proyectos);
         document.querySelector('a[href="#proyectos"]').innerHTML = content.proyectos.title;
         document.querySelector('a[href="#idiomas"]').innerHTML = content.idiomas;
-        document.querySelector('a[href="#lenguajes"]').innerHTML = content.lenguajes; 
-        document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5); 
+        document.querySelector('a[href="#lenguajes"]').innerHTML = content.lenguajes;
+        document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5);
 
         // Texto de los contenidos
         var sobre = document.getElementById('separator-1');
@@ -135,23 +134,31 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         document.querySelector('#trabaTitle').innerHTML = content.trabaTitle;
         document.querySelector('#lenguajes').innerHTML = content.lenguajes;
-        document.querySelector('#copy').innerHTML = '&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
+        document.querySelector('#copy').innerHTML = '';
+        document.querySelector('#copy').innerHTML += '<a href="https://github.com/nachocubo"><i class="bi bi-github"></i></a>&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
 
         /*
         *PROYECTOS
         */
-        
+
         if (Object.keys(content.proyectos.collection).length == 0) {
             document.querySelector('.proy-div').innerHTML = '<p>Comming soon</p>';
         } else {
+            document.querySelector('.proy-div').innerHTML = '';
+            console.log(content.proyectos.collection);
             content.proyectos.collection.forEach((proy, index) => {
-                document.querySelector('.proy-div').innerHTML += `<div class="proyecto"><div class="proy"><span>${proy['proyecto' + parseInt(index+1)].title}</span></div></div>`;
+                document.querySelector('.proy-div').innerHTML +=
+                `<div class="proyecto">
+                    <div class="proy" style="background-image:url('./img/${proy['proyecto' + parseInt(index + 1)].logo}');background-size: contain;background-repeat: no-repeat;background-position: center;">
+                        <span>${proy['proyecto' + parseInt(index + 1)].title.toUpperCase()}</span>
+                    </div>
+                </div>`;
             })
         }
 
         var proyecto = document.querySelectorAll('.proyecto');
         var isHovered = false;
-    
+
         proyecto.forEach((proy, index) => {
             if (proy && proy.children[0]) {
                 proy.addEventListener('click', () => {
@@ -163,16 +170,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         isHovered = true;
                         proy.children[0].classList.remove('proy');
                         proy.children[0].classList.add('oculta');
-                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index+1)].description}</span>`;
+                        proy.children[0].style.cursor = 'pointer';
+                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index + 1)].description}</span>`;
                     }
                 });
-        
-                proy.addEventListener('mouseout', () => {
+
+                proy.addEventListener('mouseleave', () => {
                     if (isHovered) {
                         isHovered = false;
                         proy.children[0].classList.remove('oculta');
                         proy.children[0].classList.add('proy');
-                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index+1)].title}</span>`;
+                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index + 1)].title.toUpperCase()}</span>`;
                     }
                 });
             }

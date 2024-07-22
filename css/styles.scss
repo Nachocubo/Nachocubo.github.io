@@ -357,11 +357,11 @@ main {
 
             .proy,
             .oculta {
+                background-color: rgba(211, 123, 21, 0.5);
                 position: absolute;
                 width: 100%;
                 min-height: 100%;
                 text-align: center;
-                background-color: rgba(255, 255, 255, .2);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -397,10 +397,22 @@ main {
 }
 
 #copy{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    text-align: center;
-    padding: 20px;
+    padding: 10px;
+
+    a{
+        text-decoration: none;
+        i{
+            font-size: 15pt;
+            margin: 5px;
+        }
+    }
+    a:visited{
+        color: white;
+    }
 }
 
 
