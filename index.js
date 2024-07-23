@@ -149,8 +149,11 @@ document.addEventListener("DOMContentLoaded", function () {
             content.proyectos.collection.forEach((proy, index) => {
                 document.querySelector('.proy-div').innerHTML +=
                 `<div class="proyecto">
-                    <div class="proy" style="background-image:url('./img/${proy['proyecto' + parseInt(index + 1)].logo}');background-size: contain;background-repeat: no-repeat;background-position: center;">
-                        <span>${proy['proyecto' + parseInt(index + 1)].title.toUpperCase()}</span>
+                    <div class="proy">
+                        <img src='./img/${proy.logo}' alt="${proy.title}"/>
+                    </div>
+                    <div class="oculta">
+                        <span>${proy.description}</span>
                     </div>
                 </div>`;
             })
@@ -161,27 +164,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         proyecto.forEach((proy, index) => {
             if (proy && proy.children[0]) {
+                proy.style.backgroundColor = '#' + Math.floor(Math.random() * Math.pow(16, 5));
                 proy.addEventListener('click', () => {
-                    window.open(content.proyectos.collection[index].url, '_blank');
-                });
-
-                proy.addEventListener('mouseover', () => {
-                    if (!isHovered) {
-                        isHovered = true;
-                        proy.children[0].classList.remove('proy');
-                        proy.children[0].classList.add('oculta');
-                        proy.children[0].style.cursor = 'pointer';
-                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index + 1)].description}</span>`;
-                    }
-                });
-
-                proy.addEventListener('mouseleave', () => {
-                    if (isHovered) {
-                        isHovered = false;
-                        proy.children[0].classList.remove('oculta');
-                        proy.children[0].classList.add('proy');
-                        proy.children[0].innerHTML = `<span>${content.proyectos.collection[index]['proyecto' + parseInt(index + 1)].title.toUpperCase()}</span>`;
-                    }
+                    window.open(content.proyectos.collection[index].URL, '_blank');
                 });
             }
         })

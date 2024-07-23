@@ -3,18 +3,10 @@
         "title": "Proyectos",
         "collection": [
             {
-                "proyecto1": {
-                    "title": "dama",
-                    "description": "Tu tienda online de ropa deportiva tanto para hombres y mujeres",
-                    "URL": "",
-                    "logo": "logo.png"
-                },
-                "proyecto2": {
-                    "title": "Cacahuete",
-                    "description": "Cacahuetes on the world",
-                    "URL": "",
-                    "logo": "gh.png"
-                }
+                "title": "dama",
+                "description": "Tu tienda online de ropa deportiva tanto para hombres y mujeres",
+                "URL": "https://espejodedama.netlify.app/inicio",
+                "logo": "logo.png"
             }
         ]
     },

@@ -1,7 +1,14 @@
 {
     "proyectos": {
         "title": "Progetti",
-        "collection": {}
+        "collection": [
+            {
+                "title": "dama",
+                "description": "Il tuo negozio online di abbigliamento sportivo per uomini e donne",
+                "URL": "",
+                "logo": "logo.png"
+            }
+        ]
     },
     "tituloWriter": "Full Stack Developer",
     "descripcion": [

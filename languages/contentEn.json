@@ -1,7 +1,14 @@
 {
     "proyectos": {
         "title": "Projects",
-        "collection": {}
+        "collection": [
+            {
+                "title": "dama",
+                "description": "Your online sports clothing store for men and women",
+                "URL": "",
+                "logo": "logo.png"
+            }
+        ]
     },
     "tituloWriter": "Full Stack Developer",
     "descripcion": [
