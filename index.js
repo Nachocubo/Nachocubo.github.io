@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#copy').innerHTML = '';
         document.querySelector('#copy').innerHTML += '<a href="https://github.com/nachocubo"><i class="bi bi-github"></i></a>&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
 
+        
         /*
         *PROYECTOS
         */

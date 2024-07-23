@@ -286,6 +286,10 @@ main {
     }
 }
 
+.idiomas, .lenguajes, .proyectos, .textDiv:not(.separator1){
+    margin-bottom: 150px;
+}
+
 .idiomas {
     display: flex;
     flex-direction: column;
@@ -323,12 +327,14 @@ main {
     ul{
         margin: 0 auto;
         list-style: none;
+        display: flex;
+        overflow: hidden;
 
         li{
             line-height: 30pt;
             text-align: center;
-            display: flex;
-            align-items: center;
+            margin: 20px;
+            font-style: italic;
 
             img {
                 height: 20px;
