@@ -118,6 +118,12 @@ document.addEventListener("DOMContentLoaded", function () {
         divCont.appendChild(lista);
         sobre.appendChild(divCont);
 
+        var coords = [];
+        document.querySelectorAll('.typeCont ~ div .punto').forEach((p) => {
+            coords.push(p.getBoundingClientRect().y);
+        })
+        console.log(coords);
+
         document.getElementById('paragraph-1').innerHTML = content.parrafo1;
         document.getElementById('paragraph-2').innerHTML = `<ul><li>${content.parrafo2}</li><li>${content.parrafo3}</li>`;
         document.getElementById('paragraph-tra-1').innerHTML = content.trabajo1;
@@ -163,9 +169,27 @@ document.addEventListener("DOMContentLoaded", function () {
         var proyecto = document.querySelectorAll('.proyecto');
         var isHovered = false;
 
+        /**
+         * 
+         * @returns A random color
+         */
+        let color = () => {
+            let letras = '0123456789ABCDEF';
+            let res = '#';
+            let cont = 0;
+            
+            while (cont < 6) {
+                let rand = Math.floor(Math.random() * 16);
+                res += letras[rand];
+                cont++;
+            }
+
+            return res;
+        }
+
         proyecto.forEach((proy, index) => {
             if (proy && proy.children[0]) {
-                proy.style.backgroundColor = '#' + Math.floor(Math.random() * Math.pow(16, 5));
+                proy.style.backgroundColor = color();
                 proy.addEventListener('click', () => {
                     window.open(content.proyectos.collection[index].URL, '_blank');
                 });

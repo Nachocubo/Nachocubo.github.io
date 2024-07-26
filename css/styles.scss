@@ -34,6 +34,7 @@ h6 {
     background-clip: text;
     color: transparent;
     font-weight: 100;
+    margin-bottom: 30px;
 }
 
 h1 {
@@ -210,6 +211,40 @@ main {
         min-height: 100vh;
         overflow-y: auto;
 
+        /*Elemento donde irán las notas*/
+        .right-content {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            .nota {
+                position: absolute;
+                left: 50px;
+                width: 75%;
+                border: 1px solid #00cba9;
+                padding: 20px;
+                border-radius: 20px;
+                display: block;
+
+                ul {
+                    list-style-type: none;
+
+                    li{
+                        position: relative;
+                        padding-left: 20px;
+                    }
+
+                    li::before {
+                        content: '-';
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
         .border-gradient {
             position: absolute;
             top: 20px;
@@ -235,31 +270,6 @@ main {
             .punto:hover{
                 background-color: #00cba9;
                 cursor: pointer;
-            }
-
-            .nota {
-                position: absolute;
-                left: 50%;
-                width: max-content;
-                border: 1px solid #00cba9;
-                padding: 20px;
-                border-radius: 20px;
-                display: block;
-
-                ul {
-                    list-style-type: none;
-
-                    li{
-                        position: relative;
-                        padding-left: 20px;
-                    }
-
-                    li::before {
-                        content: '-';
-                        position: absolute;
-                        left: 0;
-                    }
-                }
             }
         }
 
@@ -324,22 +334,29 @@ main {
     display: flex;
     flex-direction: column;
 
-    ul{
+    marquee{
+        border-left: 2px solid rgba(255, 255, 255, 1.0);
+        border-right: 2px solid rgba(255, 255, 255, 1.0);
+        width: 50%;
         margin: 0 auto;
-        list-style: none;
-        display: flex;
-        overflow: hidden;
-
-        li{
-            line-height: 30pt;
-            text-align: center;
-            margin: 20px;
-            font-style: italic;
-
-            img {
-                height: 20px;
-                margin-left: 10px;
-                filter: grayscale(1);
+        transform: skewX(-27deg);
+        
+        ul{
+            transform: skewX(27deg);
+            list-style: none;
+            display: flex;
+    
+            li{
+                line-height: 10pt;
+                text-align: center;
+                margin: 20px;
+                font-style: italic;
+    
+                img {
+                    height: 20px;
+                    margin-left: 10px;
+                    filter: grayscale(1);
+                }
             }
         }
     }
