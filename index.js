@@ -119,10 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
         sobre.appendChild(divCont);
 
         var coords = [];
-        document.querySelectorAll('.typeCont ~ div .punto').forEach((p) => {
+        var notas = [];
+
+        document.querySelectorAll('.punto').forEach((p) => {
             coords.push(p.getBoundingClientRect().y);
-        })
-        console.log(coords);
+        });
+        
+        document.querySelectorAll('.right-content .nota').forEach((nota, index) => {
+            console.log('La nota ' + nota + ' con coordenada actual ' + nota.getBoundingClientRect().y + ' se establecerá a ' + coords[index]);
+            let offsetY = coords[index] - nota.getBoundingClientRect().y;
+            nota.style.transform = `translateY(${offsetY}px)`;
+            notas.push(nota);
+        });
 
         document.getElementById('paragraph-1').innerHTML = content.parrafo1;
         document.getElementById('paragraph-2').innerHTML = `<ul><li>${content.parrafo2}</li><li>${content.parrafo3}</li>`;
@@ -143,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#copy').innerHTML = '';
         document.querySelector('#copy').innerHTML += '<a href="https://github.com/nachocubo"><i class="bi bi-github"></i></a>&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
 
-        
+
         /*
         *PROYECTOS
         */
@@ -152,10 +160,9 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector('.proy-div').innerHTML = '<p>Comming soon</p>';
         } else {
             document.querySelector('.proy-div').innerHTML = '';
-            console.log(content.proyectos.collection);
             content.proyectos.collection.forEach((proy, index) => {
                 document.querySelector('.proy-div').innerHTML +=
-                `<div class="proyecto">
+                    `<div class="proyecto">
                     <div class="proy">
                         <img src='./img/${proy.logo}' alt="${proy.title}"/>
                     </div>
@@ -177,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let letras = '0123456789ABCDEF';
             let res = '#';
             let cont = 0;
-            
+
             while (cont < 6) {
                 let rand = Math.floor(Math.random() * 16);
                 res += letras[rand];
