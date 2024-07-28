@@ -19,7 +19,7 @@ body {
     min-height: 100vh;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #151515;
-    color: white;   
+    color: white;
 }
 
 h1,
@@ -34,6 +34,11 @@ h6 {
     background-clip: text;
     color: transparent;
     font-weight: 100;
+}
+
+h1,
+h2,
+h3 {
     margin-bottom: 30px;
 }
 
@@ -52,9 +57,10 @@ h4 {
 main {
     position: relative;
     min-height: 100vh;
-    border-top: 1px solid black; /*prevee que el select se baje*/
+    border-top: 1px solid black;
+    /*prevee que el select se baje*/
     padding-top: 20px;
-    
+
     .custom-select {
         position: absolute;
         width: 200px;
@@ -63,7 +69,7 @@ main {
         img {
             height: 20px;
         }
-        
+
         .select-arrow {
             position: absolute;
             top: 50%;
@@ -72,16 +78,16 @@ main {
             pointer-events: none;
             font-size: 16px;
         }
-        
+
         .select-selected {
             background-color: #151515;
             border: 1px solid #ccc;
-            
+
             img {
                 margin-right: 20px;
             }
         }
-        
+
         .select-selected,
         .select-item {
             padding: 10px;
@@ -89,7 +95,7 @@ main {
             display: flex;
             justify-content: space-between;
         }
-        
+
         .select-items {
             position: absolute;
             background-color: #151515;
@@ -97,22 +103,24 @@ main {
             border-top: none;
             width: 100%;
             z-index: 99;
-            
-            
+
+
             .select-item:hover {
                 background-color: #f3f3f330;
             }
         }
-        
+
         .select-hide {
             display: none;
         }
     }
+
     header {
         ul {
             display: flex;
             justify-content: center;
             list-style: none;
+
             li {
                 display: flex;
                 align-items: center;
@@ -169,17 +177,21 @@ main {
     display: flex;
     justify-content: center;
     font-size: 20pt;
-    div ul{
+
+    div ul {
         padding: 20px;
         list-style: none;
-        ::first-letter{
+
+        ::first-letter {
             text-transform: uppercase;
         }
-        li{
+
+        li {
             line-height: 50px;
         }
     }
-    img{
+
+    img {
         height: 400px;
         filter: grayscale(.7);
         mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
@@ -234,7 +246,7 @@ main {
                 ul {
                     list-style-type: none;
 
-                    li{
+                    li {
                         position: relative;
                         padding-left: 20px;
                     }
@@ -271,7 +283,8 @@ main {
                 border: 2px solid white;
                 z-index: 1;
             }
-            .punto:hover{
+
+            .punto:hover {
                 background-color: #00cba9;
                 cursor: pointer;
             }
@@ -300,7 +313,10 @@ main {
     }
 }
 
-.idiomas, .lenguajes, .proyectos, .textDiv:not(.separator1){
+.idiomas,
+.lenguajes,
+.proyectos,
+.textDiv:not(.separator1) {
     margin-bottom: 150px;
 }
 
@@ -338,24 +354,24 @@ main {
     display: flex;
     flex-direction: column;
 
-    marquee{
+    marquee {
         border-left: 2px solid rgba(255, 255, 255, 1.0);
         border-right: 2px solid rgba(255, 255, 255, 1.0);
         width: 50%;
         margin: 0 auto;
         transform: skewX(-27deg);
-        
-        ul{
+
+        ul {
             transform: skewX(27deg);
             list-style: none;
             display: flex;
-    
-            li{
+
+            li {
                 line-height: 10pt;
                 text-align: center;
                 margin: 20px;
                 font-style: italic;
-    
+
                 img {
                     height: 20px;
                     margin-left: 10px;
@@ -400,26 +416,27 @@ main {
                 align-items: center;
                 justify-content: center;
             }
-            
-            .proy{
+
+            .proy {
                 z-index: 2;
+
                 img {
                     max-height: 160px;
                 }
             }
 
-            .proy:hover{
+            .proy:hover {
                 cursor: pointer;
                 opacity: 0;
                 transition: opacity 250ms 0s;
-                
-                ~ .oculta{
+
+                ~.oculta {
                     opacity: 1;
                     transition: opacity 1s 0s;
                 }
             }
-            
-            .oculta{
+
+            .oculta {
                 opacity: 0;
                 z-index: 1;
             }
@@ -452,21 +469,24 @@ main {
     font-size: 24px;
 }
 
-#copy{
+#copy {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 10px;
 
-    a{
+    a {
         text-decoration: none;
-        i{
+
+        i {
             font-size: 15pt;
             margin: 5px;
         }
     }
-    a, a:visited{
+
+    a,
+    a:visited {
         color: white;
     }
 }
@@ -489,10 +509,12 @@ main {
         margin-top: 50px;
     }
 }
+
 @media screen and (width < 600px) {
     .separator1 {
         flex-direction: column;
-        img{
+
+        img {
             width: 239px;
         }
     }
@@ -504,19 +526,22 @@ main {
     }
 }
 
-@media screen and (width < 400px){
-    main header{
-        ul{
+@media screen and (width < 400px) {
+    main header {
+        ul {
             flex-direction: column;
-            li{
+
+            li {
                 justify-content: center;
-                a{
+
+                a {
                     font-size: 4vw !important;
                 }
             }
         }
     }
-    .nota{
+
+    .nota {
         left: 0;
         width: 200px;
     }

@@ -34,6 +34,11 @@ h6 {
   background-clip: text;
   color: transparent;
   font-weight: 100;
+}
+
+h1,
+h2,
+h3 {
   margin-bottom: 30px;
 }
 
@@ -52,7 +57,8 @@ h4 {
 main {
   position: relative;
   min-height: 100vh;
-  border-top: 1px solid black; /*prevee que el select se baje*/
+  border-top: 1px solid black;
+  /*prevee que el select se baje*/
   padding-top: 20px;
 }
 main .custom-select {
@@ -269,7 +275,10 @@ main .decor svg {
   color: #fff;
 }
 
-.idiomas, .lenguajes, .proyectos, .textDiv:not(.separator1) {
+.idiomas,
+.lenguajes,
+.proyectos,
+.textDiv:not(.separator1) {
   margin-bottom: 150px;
 }
 
@@ -421,7 +430,8 @@ main .decor svg {
   font-size: 15pt;
   margin: 5px;
 }
-#copy a, #copy a:visited {
+#copy a,
+#copy a:visited {
   color: white;
 }
 

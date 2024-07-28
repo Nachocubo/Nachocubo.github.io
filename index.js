@@ -97,6 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('a[href="#proyectos"]').innerHTML = content.proyectos.title;
         document.querySelector('a[href="#idiomas"]').innerHTML = content.idiomas;
         document.querySelector('a[href="#lenguajes"]').innerHTML = content.lenguajes;
+        document.querySelector('a[href="#marcas"]').innerHTML = content.marcas;
+        document.querySelector('a[href="#estilos"]').innerHTML = content.estilos;
         document.querySelector('a[href="#formaTitle"]').innerHTML = content.formaTitle.slice(0, -5);
 
         // Texto de los contenidos
@@ -126,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
         document.querySelectorAll('.right-content .nota').forEach((nota, index) => {
-            console.log('La nota ' + nota + ' con coordenada actual ' + nota.getBoundingClientRect().y + ' se establecerá a ' + coords[index]);
+            //console.log('La nota ' + nota + ' con coordenada actual ' + nota.getBoundingClientRect().y + ' se establecerá a ' + coords[index]);
             let offsetY = coords[index] - nota.getBoundingClientRect().y;
             nota.style.transform = `translateY(${offsetY}px)`;
             notas.push(nota);
@@ -148,34 +150,38 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         document.querySelector('#trabaTitle').innerHTML = content.trabaTitle;
         document.querySelector('#lenguajes').innerHTML = content.lenguajes;
+        document.querySelector('#marcas').innerHTML = content.marcas;
+        document.querySelector('#estilos').innerHTML = content.estilos;
         document.querySelector('#copy').innerHTML = '';
         document.querySelector('#copy').innerHTML += '<a href="https://github.com/nachocubo"><i class="bi bi-github"></i></a>&copy; Ignacio Cubo - ' + content.copy + ' ' + new Date().getFullYear();
-
+        document.querySelectorAll('.soon').forEach(soon => {
+            soon.innerHTML = content.proximamente;
+        })
 
         /*
         *PROYECTOS
         */
 
         if (Object.keys(content.proyectos.collection).length == 0) {
-            document.querySelector('.proy-div').innerHTML = '<p>Comming soon</p>';
+            document.querySelector('.proy-div').innerHTML = `<p>${content.proximamente}</p>`;
         } else {
             document.querySelector('.proy-div').innerHTML = '';
             content.proyectos.collection.forEach((proy, index) => {
                 document.querySelector('.proy-div').innerHTML +=
                     `<div class="proyecto">
-                    <div class="proy">
-                        <img src='./img/${proy.logo}' alt="${proy.title}"/>
-                    </div>
-                    <div class="oculta">
-                        <span>${proy.description}</span>
-                    </div>
-                </div>`;
+                        <div class="proy">
+                            <img src='./img/${proy.logo}' alt="${proy.title}"/>
+                        </div>
+                        <div class="oculta">
+                            <span>${proy.description}</span>
+                        </div>
+                    </div>`;
             })
         }
-
+        
         var proyecto = document.querySelectorAll('.proyecto');
         var isHovered = false;
-
+        
         /**
          * 
          * @returns A random color
@@ -184,24 +190,47 @@ document.addEventListener("DOMContentLoaded", function () {
             let letras = '0123456789ABCDEF';
             let res = '#';
             let cont = 0;
-
+        
             while (cont < 6) {
                 let rand = Math.floor(Math.random() * 16);
                 res += letras[rand];
                 cont++;
             }
-
+        
             return res;
         }
-
+        
+        /**
+         * Calculates the luminosity of a hex color
+         * @param {string} hex - The hex color code
+         * @returns {number} - The luminosity of the color
+         */
+        let getLuminosity = (hex) => {
+            hex = hex.replace('#', '');
+            let r = parseInt(hex.substring(0, 2), 16) / 255;
+            let g = parseInt(hex.substring(2, 4), 16) / 255;
+            let b = parseInt(hex.substring(4, 6), 16) / 255;
+        
+            let lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            return lum;
+        }
+        
         proyecto.forEach((proy, index) => {
             if (proy && proy.children[0]) {
-                proy.style.backgroundColor = color();
+                let bgColor = color();
+                proy.style.backgroundColor = bgColor;
+        
+                // Check if color is very light
+                if (getLuminosity(bgColor) > 0.7) {
+                    proy.children[0].children[0].src = './img/logo_oscuro.png';
+                    proy.children[1].children[0].style.color = 'black';
+                }
+        
                 proy.addEventListener('click', () => {
                     window.open(content.proyectos.collection[index].URL, '_blank');
                 });
             }
-        })
+        })        
 
         /*
         *Efecto escritura de titulo
