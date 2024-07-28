@@ -61,7 +61,7 @@ main {
     /*prevee que el select se baje*/
     padding-top: 20px;
 
-    .custom-select {
+    .custom-select:not(.custom-select:has(ul)) {
         position: absolute;
         width: 200px;
         right: 20px;
@@ -115,28 +115,38 @@ main {
         }
     }
 
-    header {
-        ul {
+    .custom-select:has(ul){
+        position: relative;
+        z-index: 5;
+        width: max-content;
+        margin: 0 auto;
+
+        .select-selected{
             display: flex;
-            justify-content: center;
-            list-style: none;
-
-            li {
-                display: flex;
-                align-items: center;
-                border-radius: 10px;
-
-                a {
-                    text-decoration: none;
-                    color: #00cba9;
-                    font-weight: 100;
-                    padding: 10px 20px;
-                    font-size: 2vw;
+            justify-content: space-between;
+            line-height: 35px;
+        }
+        .select-hide{
+            ul {
+                list-style: none;
+    
+                li {
+                    border-radius: 10px;
+                    line-height: 35px;
+    
+                    a {
+                        box-sizing: border-box;
+                        text-decoration: none;
+                        color: #00cba9;
+                        font-weight: 100;
+                        padding: 0 20px;
+                        font-size: 2vw;
+                    }
                 }
-            }
-
-            li:hover {
-                background-color: rgba(255, 255, 255, .1);
+    
+                li:hover {
+                    background-color: rgba(255, 255, 255, .1);
+                }
             }
         }
     }
