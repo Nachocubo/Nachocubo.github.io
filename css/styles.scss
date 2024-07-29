@@ -126,6 +126,7 @@ main {
             justify-content: space-between;
             line-height: 35px;
         }
+        
         .select-hide{
             ul {
                 list-style: none;
@@ -368,7 +369,7 @@ main {
         border-left: 2px solid rgba(255, 255, 255, 1.0);
         border-right: 2px solid rgba(255, 255, 255, 1.0);
         width: 50%;
-        margin: 0 auto;
+        margin: 50px auto;
         transform: skewX(-27deg);
 
         ul {
