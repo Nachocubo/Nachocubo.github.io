@@ -61,15 +61,15 @@ main {
   /*prevee que el select se baje*/
   padding-top: 20px;
 }
-main .custom-select {
+main .custom-select:not(.custom-select:has(ul)) {
   position: absolute;
   width: 200px;
   right: 20px;
 }
-main .custom-select img {
+main .custom-select:not(.custom-select:has(ul)) img {
   height: 20px;
 }
-main .custom-select .select-arrow {
+main .custom-select:not(.custom-select:has(ul)) .select-arrow {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -77,21 +77,21 @@ main .custom-select .select-arrow {
   pointer-events: none;
   font-size: 16px;
 }
-main .custom-select .select-selected {
+main .custom-select:not(.custom-select:has(ul)) .select-selected {
   background-color: #151515;
   border: 1px solid #ccc;
 }
-main .custom-select .select-selected img {
+main .custom-select:not(.custom-select:has(ul)) .select-selected img {
   margin-right: 20px;
 }
-main .custom-select .select-selected,
-main .custom-select .select-item {
+main .custom-select:not(.custom-select:has(ul)) .select-selected,
+main .custom-select:not(.custom-select:has(ul)) .select-item {
   padding: 10px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
 }
-main .custom-select .select-items {
+main .custom-select:not(.custom-select:has(ul)) .select-items {
   position: absolute;
   background-color: #151515;
   border: 1px solid #ccc;
@@ -99,30 +99,39 @@ main .custom-select .select-items {
   width: 100%;
   z-index: 99;
 }
-main .custom-select .select-items .select-item:hover {
+main .custom-select:not(.custom-select:has(ul)) .select-items .select-item:hover {
   background-color: rgba(243, 243, 243, 0.1882352941);
 }
-main .custom-select .select-hide {
+main .custom-select:not(.custom-select:has(ul)) .select-hide {
   display: none;
 }
-main header ul {
+main .custom-select:has(ul) {
+  position: relative;
+  z-index: 5;
+  width: max-content;
+  margin: 0 auto;
+}
+main .custom-select:has(ul) .select-selected {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  line-height: 35px;
+}
+main .custom-select:has(ul) .select-hide ul {
   list-style: none;
 }
-main header ul li {
-  display: flex;
-  align-items: center;
+main .custom-select:has(ul) .select-hide ul li {
   border-radius: 10px;
+  line-height: 35px;
 }
-main header ul li a {
+main .custom-select:has(ul) .select-hide ul li a {
+  box-sizing: border-box;
   text-decoration: none;
   color: #00cba9;
   font-weight: 100;
-  padding: 10px 20px;
+  padding: 0 20px;
   font-size: 2vw;
 }
-main header ul li:hover {
+main .custom-select:has(ul) .select-hide ul li:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 main .social {
@@ -317,7 +326,7 @@ main .decor svg {
   border-left: 2px solid rgb(255, 255, 255);
   border-right: 2px solid rgb(255, 255, 255);
   width: 50%;
-  margin: 0 auto;
+  margin: 50px auto;
   transform: skewX(-27deg);
 }
 .lenguajes marquee ul {
