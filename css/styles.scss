@@ -61,7 +61,7 @@ main {
     /*prevee que el select se baje*/
     padding-top: 20px;
 
-    .custom-select:not(.custom-select:has(ul)) {
+    .custom-select:not(.custom-select:has(.menu)) {
         position: absolute;
         width: 200px;
         right: 20px;
@@ -115,37 +115,49 @@ main {
         }
     }
 
-    .custom-select:has(ul){
+    .menu {
         position: relative;
         z-index: 5;
         width: max-content;
         margin: 0 auto;
-
-        .select-selected{
+        
+        .select-selected {
             display: flex;
             justify-content: space-between;
             line-height: 35px;
+            border: 2px solid white;
+            padding: 0 10px;
+        }
+
+        .select-selected:hover {
+            cursor: pointer;
         }
         
-        .select-hide{
-            ul {
-                list-style: none;
-    
-                li {
+        .select-hide {
+            div {
+                transition: all 1s 0s;
+                height: 0;
+                overflow: hidden;
+                background-color: #151515;
+                
+                span {
                     border-radius: 10px;
                     line-height: 35px;
-    
+                    display: block;
+                    position: relative;
+
                     a {
                         box-sizing: border-box;
                         text-decoration: none;
                         color: #00cba9;
                         font-weight: 100;
                         padding: 0 20px;
-                        font-size: 2vw;
+                        font-size: 1vw;
+                        display: block;
                     }
                 }
-    
-                li:hover {
+
+                span:hover {
                     background-color: rgba(255, 255, 255, .1);
                 }
             }
@@ -156,6 +168,7 @@ main {
         display: flex;
         justify-content: space-evenly;
         position: absolute;
+        z-index: 4;
         top: 50%;
         width: 100%;
 
@@ -179,6 +192,7 @@ main {
 
     .decor svg {
         position: absolute;
+        z-index: 4;
         bottom: 0;
     }
 }

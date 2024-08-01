@@ -61,15 +61,15 @@ main {
   /*prevee que el select se baje*/
   padding-top: 20px;
 }
-main .custom-select:not(.custom-select:has(ul)) {
+main .custom-select:not(.custom-select:has(.menu)) {
   position: absolute;
   width: 200px;
   right: 20px;
 }
-main .custom-select:not(.custom-select:has(ul)) img {
+main .custom-select:not(.custom-select:has(.menu)) img {
   height: 20px;
 }
-main .custom-select:not(.custom-select:has(ul)) .select-arrow {
+main .custom-select:not(.custom-select:has(.menu)) .select-arrow {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -77,21 +77,21 @@ main .custom-select:not(.custom-select:has(ul)) .select-arrow {
   pointer-events: none;
   font-size: 16px;
 }
-main .custom-select:not(.custom-select:has(ul)) .select-selected {
+main .custom-select:not(.custom-select:has(.menu)) .select-selected {
   background-color: #151515;
   border: 1px solid #ccc;
 }
-main .custom-select:not(.custom-select:has(ul)) .select-selected img {
+main .custom-select:not(.custom-select:has(.menu)) .select-selected img {
   margin-right: 20px;
 }
-main .custom-select:not(.custom-select:has(ul)) .select-selected,
-main .custom-select:not(.custom-select:has(ul)) .select-item {
+main .custom-select:not(.custom-select:has(.menu)) .select-selected,
+main .custom-select:not(.custom-select:has(.menu)) .select-item {
   padding: 10px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
 }
-main .custom-select:not(.custom-select:has(ul)) .select-items {
+main .custom-select:not(.custom-select:has(.menu)) .select-items {
   position: absolute;
   background-color: #151515;
   border: 1px solid #ccc;
@@ -99,45 +99,57 @@ main .custom-select:not(.custom-select:has(ul)) .select-items {
   width: 100%;
   z-index: 99;
 }
-main .custom-select:not(.custom-select:has(ul)) .select-items .select-item:hover {
+main .custom-select:not(.custom-select:has(.menu)) .select-items .select-item:hover {
   background-color: rgba(243, 243, 243, 0.1882352941);
 }
-main .custom-select:not(.custom-select:has(ul)) .select-hide {
+main .custom-select:not(.custom-select:has(.menu)) .select-hide {
   display: none;
 }
-main .custom-select:has(ul) {
+main .menu {
   position: relative;
   z-index: 5;
   width: max-content;
   margin: 0 auto;
 }
-main .custom-select:has(ul) .select-selected {
+main .menu .select-selected {
   display: flex;
   justify-content: space-between;
   line-height: 35px;
+  border: 2px solid white;
+  padding: 0 10px;
 }
-main .custom-select:has(ul) .select-hide ul {
-  list-style: none;
+main .menu .select-selected:hover {
+  cursor: pointer;
 }
-main .custom-select:has(ul) .select-hide ul li {
+main .menu .select-hide div {
+  transition: all 1s 0s;
+  height: 0;
+  overflow: hidden;
+  background-color: #151515;
+}
+main .menu .select-hide div span {
   border-radius: 10px;
   line-height: 35px;
+  display: block;
+  position: relative;
 }
-main .custom-select:has(ul) .select-hide ul li a {
+main .menu .select-hide div span a {
   box-sizing: border-box;
   text-decoration: none;
   color: #00cba9;
   font-weight: 100;
   padding: 0 20px;
-  font-size: 2vw;
+  font-size: 1vw;
+  display: block;
 }
-main .custom-select:has(ul) .select-hide ul li:hover {
+main .menu .select-hide div span:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 main .social {
   display: flex;
   justify-content: space-evenly;
   position: absolute;
+  z-index: 4;
   top: 50%;
   width: 100%;
 }
@@ -157,6 +169,7 @@ main .social a i:hover {
 }
 main .decor svg {
   position: absolute;
+  z-index: 4;
   bottom: 0;
 }
 

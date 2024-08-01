@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const velocidad = 150;
 
         // Texto de los enlaces del menú
+        document.querySelector('#ir').innerHTML = `${content.ir} <i class="bi bi-caret-down-fill select-arrow"></i`;
         document.querySelector('a[href="#separator-1"]').innerHTML = content.quiensoy;
         document.querySelector('a[href="#proyectos"]').innerHTML = content.proyectos.title;
         document.querySelector('a[href="#idiomas"]').innerHTML = content.idiomas;
@@ -126,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('.punto').forEach((p) => {
             coords.push(p.getBoundingClientRect().y);
         });
-        
+
         document.querySelectorAll('.right-content .nota').forEach((nota, index) => {
             //console.log('La nota ' + nota + ' con coordenada actual ' + nota.getBoundingClientRect().y + ' se establecerá a ' + coords[index]);
             let offsetY = coords[index] - nota.getBoundingClientRect().y;
@@ -178,10 +179,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>`;
             })
         }
-        
+
         var proyecto = document.querySelectorAll('.proyecto');
         var isHovered = false;
-        
+
         /**
          * 
          * @returns A random color
@@ -190,16 +191,16 @@ document.addEventListener("DOMContentLoaded", function () {
             let letras = '0123456789ABCDEF';
             let res = '#';
             let cont = 0;
-        
+
             while (cont < 6) {
                 let rand = Math.floor(Math.random() * 16);
                 res += letras[rand];
                 cont++;
             }
-        
+
             return res;
         }
-        
+
         /**
          * Calculates the luminosity of a hex color
          * @param {string} hex - The hex color code
@@ -210,27 +211,27 @@ document.addEventListener("DOMContentLoaded", function () {
             let r = parseInt(hex.substring(0, 2), 16) / 255;
             let g = parseInt(hex.substring(2, 4), 16) / 255;
             let b = parseInt(hex.substring(4, 6), 16) / 255;
-        
+
             let lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
             return lum;
         }
-        
+
         proyecto.forEach((proy, index) => {
             if (proy && proy.children[0]) {
                 let bgColor = color();
                 proy.style.backgroundColor = bgColor;
-        
+
                 // Check if color is very light
                 if (getLuminosity(bgColor) > 0.7) {
                     proy.children[0].children[0].src = './img/logo_oscuro.png';
                     proy.children[1].children[0].style.color = 'black';
                 }
-        
+
                 proy.addEventListener('click', () => {
                     window.open(content.proyectos.collection[index].URL, '_blank');
                 });
             }
-        })        
+        })
 
         /*
         *Efecto escritura de titulo
@@ -274,6 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var customSelect = document.querySelector('.custom-select');
     var selected = customSelect.querySelector('.select-selected');
     var items = customSelect.querySelector('.select-items');
+    var menu = document.querySelector('.menu .select-selected');
 
     selected.addEventListener('click', function () {
         items.classList.toggle('select-hide');
@@ -286,6 +288,27 @@ document.addEventListener("DOMContentLoaded", function () {
             items.classList.add('select-hide');
         });
     });
+
+    menu.addEventListener('click', () => {
+        let cont = 0;
+        let altura = 0;
+        menu.nextElementSibling.children[0].childNodes.forEach(item => {
+            //coge los nodos que no son text y su altura
+            if (item.nodeType !== 3) {
+                cont++;
+                altura = item.clientHeight;
+            }
+        })
+        menu.nextElementSibling.children[0].style.height = cont * altura + 'px';
+    })
+
+    /* document.addEventListener('click', (e) => {
+        console.log(e.target.classList);
+        if (!e.target.classList.contains('selected')) {
+            menu.nextElementSibling.children[0].style.height = '0';
+            console.log('dd');
+        }
+    }) */
 
     document.addEventListener('click', function (event) {
         if (!customSelect.contains(event.target)) {
