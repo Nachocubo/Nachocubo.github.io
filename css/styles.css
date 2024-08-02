@@ -108,38 +108,37 @@ main .custom-select:not(.custom-select:has(.menu)) .select-hide {
 main .menu {
   position: relative;
   z-index: 5;
-  width: max-content;
+  width: 200px;
   margin: 0 auto;
 }
 main .menu .select-selected {
   display: flex;
   justify-content: space-between;
   line-height: 35px;
-  border: 2px solid white;
+  border: 1px solid white;
   padding: 0 10px;
 }
 main .menu .select-selected:hover {
   cursor: pointer;
 }
 main .menu .select-hide div {
-  transition: all 1s 0s;
+  transition: all 500ms 0s;
   height: 0;
   overflow: hidden;
   background-color: #151515;
 }
 main .menu .select-hide div span {
   border-radius: 10px;
-  line-height: 35px;
   display: block;
   position: relative;
+  line-height: 35px;
 }
 main .menu .select-hide div span a {
-  box-sizing: border-box;
   text-decoration: none;
   color: #00cba9;
   font-weight: 100;
   padding: 0 20px;
-  font-size: 1vw;
+  font-size: 12pt;
   display: block;
 }
 main .menu .select-hide div span:hover {

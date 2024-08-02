@@ -302,13 +302,15 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.nextElementSibling.children[0].style.height = cont * altura + 'px';
     })
 
-    /* document.addEventListener('click', (e) => {
-        console.log(e.target.classList);
-        if (!e.target.classList.contains('selected')) {
-            menu.nextElementSibling.children[0].style.height = '0';
-            console.log('dd');
+    document.addEventListener('click', (e) => {
+        const dropdown = menu.nextElementSibling.children[0];
+
+        if (dropdown.style.height !== '0px') {
+            if (!e.target.classList.contains('selected') && e.target !== menu) {
+                dropdown.style.height = '0';
+            }
         }
-    }) */
+    })
 
     document.addEventListener('click', function (event) {
         if (!customSelect.contains(event.target)) {
