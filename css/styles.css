@@ -328,6 +328,8 @@ main .decor svg {
   align-items: center;
   justify-content: flex-end;
   padding-right: 5px;
+  width: 0;
+  transition: width 1s 0s;
 }
 
 .lenguajes {

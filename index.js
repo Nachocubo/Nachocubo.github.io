@@ -88,14 +88,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 return 0;
         }
     }
-
+    
     /* Nivel de idiomas */
-    document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
     document.querySelector('#es-bar .percentage').innerHTML += `<span class="extremo">${esLvl}</span>`;
-    document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
     document.querySelector('#en-bar .percentage').innerHTML += `<span class="extremo">${enLvl}</span>`;
-    document.querySelector('#it-bar .percentage').style.width = operacion(itLvl) + '%';
     document.querySelector('#it-bar .percentage').innerHTML += `<span class="extremo">${itLvl}</span>`;
+    
+    document.addEventListener('scroll', () => {
+        if (window.scrollY >= 3400) {
+            document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
+            document.querySelector('#en-bar .percentage').style.width = operacion(enLvl) + '%';
+            document.querySelector('#it-bar .percentage').style.width = operacion(itLvl) + '%';
+        }
+    })
 
     // Función para actualizar el contenido según el idioma seleccionado
     function updateContent(content) {
