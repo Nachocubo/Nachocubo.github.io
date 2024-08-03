@@ -384,6 +384,7 @@ main {
         width: 50%;
         margin: 50px auto;
         transform: skewX(-27deg);
+        transition: width 500ms 0s;
 
         ul {
             transform: skewX(27deg);
@@ -403,6 +404,26 @@ main {
                 }
             }
         }
+    }
+    .close{
+        width: 0;
+    }
+    button{
+        width: 100px;
+        padding: 10px 5px;
+        background: none;
+        border: 1px solid white;
+        color: white;
+        display: block;
+        margin: 0 auto;
+        font-size: 10pt;
+        transition: all 250ms 0s;
+        margin-bottom: 150px;
+    }
+    button:hover{
+        background-color: white;
+        color: #000;
+        cursor: pointer;
     }
 }
 

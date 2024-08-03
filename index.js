@@ -20,11 +20,24 @@ if (!isProduction) {
     });
 }
 
+var buttonClose = document.querySelectorAll('marquee ~ button');
+
 document.addEventListener("DOMContentLoaded", function () {
     // Botón para subir
     document.querySelector('#subir').addEventListener('click', (e) => {
         window.scrollTo(0, 0);
     });
+
+    buttonClose.forEach((item) => {
+        item.addEventListener('click', () => {
+            item.previousElementSibling.classList.toggle('close');
+            if (item.textContent.toLowerCase().includes('cerrar')) {
+                item.textContent = 'Abrir lista';
+            } else {
+                item.textContent = 'Cerrar lista';
+            }
+        })
+    })
 
     const contentElement = document.getElementById("content");
     const languageSelect = document.querySelector(".custom-select");
