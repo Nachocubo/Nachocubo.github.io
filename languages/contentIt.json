@@ -1,40 +1,41 @@
 {
-    "proyectos": {
-        "title": "Progetti",
-        "collection": [
-            {
-                "title": "dama",
-                "description": "Il tuo negozio online di abbigliamento sportivo per uomini e donne",
-                "URL": "",
-                "logo": "logo.png"
-            }
-        ]
-    },
-    "tituloWriter": "Full Stack Developer",
+    "actualidad": "Oggi",
+    "copy": "Tutti i diritti riservati",
     "descripcion": [
         "Autodidatta",
         "curioso",
         "amante delle lingue e della lettura",
         "nel tempo libero, scrittore"
     ],
+    "español": "Spagnolo",
+    "estilos": "Stili",
+    "formaTitle": "La mia formazione come",
+    "frase": "Il tempo non conta, l'importante è non smettere di provarci.",
+    "idiomas": "Lingue",
+    "ingles": "Inglese",
+    "ir": "Andare a",
+    "italiano": "italiano",
+    "lenguajes": "Linguaggi di programmazione",
+    "marcas": "Linguaggi di markup",
     "parrafo1": "Ciclo Formativo di Grado Medio in Sistemi Microinformatici e Reti (2019-2021)",
     "parrafo2": "Ciclo Formativo di Grado Superiore in Sviluppo di Applicazioni Web (2022-2024)",
     "parrafo3": "Corsi online autodidatti (2019-presente)",
+    "proximamente": "prossimamente",
+    "proyectos": {
+        "collection": [
+            {
+                "description": "Il tuo negozio online di abbigliamento sportivo per uomini e donne",
+                "logo": "logo.png",
+                "title": "dama",
+                "URL": ""
+            }
+        ],
+        "title": "Progetti"
+    },
+    "quiensoy": "Su di me",
+    "tituloWriter": "Full Stack Developer",
     "trabajo1": "Técnico de Sistemas en BEEP Segovia",
     "trabajo2": "Desarroolador Web en CEASE",
     "trabajo3": "Junior Salesforce Consultant en Atlas Cloud",
-    "quiensoy": "Su di me",
-    "idiomas": "Lingue",
-    "español": "Spagnolo",
-    "ingles": "Inglese",
-    "italiano": "italiano",
-    "formaTitle": "La mia formazione come",
-    "trabaTitle": "Vita laborale",
-    "actualidad": "Oggi",
-    "copy": "Tutti i diritti riservati",
-    "lenguajes": "Linguaggi di programmazione",
-    "marcas": "Linguaggi di markup",
-    "estilos": "Stili",
-    "proximamente": "prossimamente",
-    "ir": "Andare a"
+    "trabaTitle": "Vita laborale"
 }

@@ -1,40 +1,41 @@
 {
-    "proyectos": {
-        "title": "Proyectos",
-        "collection": [
-            {
-                "title": "dama",
-                "description": "Tu tienda online de ropa deportiva tanto para hombres y mujeres",
-                "URL": "https://espejodedama.netlify.app/inicio",
-                "logo": "logo.png"
-            }
-        ]
-    },
-    "tituloWriter": "Full Stack Developer",
+    "actualidad": "Hoy",
+    "copy": "Todos los derechos reservados",
     "descripcion": [
         "Autodidacta",
         "curioso",
         "amante de los idiomas y de la lectura",
         "en mis tiempos libres, escritor"
     ],
+    "español": "Español",
+    "estilos": "Estilos",
+    "formaTitle": "Mi formación como",
+    "frase": "Da igual el tiempo, lo importante es no dejar de intentarlo",
+    "idiomas": "Idiomas",
+    "ingles": "Inglés",
+    "ir": "Ir a",
+    "italiano": "Italiano",
+    "lenguajes": "Lenguajes de programación",
+    "marcas": "Lenguajes de marcas",
     "parrafo1": "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes (2019-2021)",
     "parrafo2": "Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (2022-2024)",
     "parrafo3": "Cursos online de forma autodidacta (2019-actualidad)",
+    "proximamente": "proximamente",
+    "proyectos": {
+        "collection": [
+            {
+                "description": "Tu tienda online de ropa deportiva tanto para hombres y mujeres",
+                "logo": "logo.png",
+                "title": "dama",
+                "URL": "https://espejodedama.netlify.app/inicio"
+            }
+        ],
+        "title": "Proyectos"
+    },
+    "quiensoy": "Sobre mí",
+    "tituloWriter": "Full Stack Developer",
     "trabajo1": "Técnico de Sistemas en BEEP Segovia",
     "trabajo2": "Desarroolador Web en CEASE",
     "trabajo3": "Junior Salesforce Consultant en Atlas Cloud",
-    "quiensoy": "Sobre mí",
-    "idiomas": "Idiomas",
-    "español": "Español",
-    "ingles": "Inglés",
-    "italiano": "Italiano",
-    "formaTitle": "Mi formación como",
-    "trabaTitle": "Vida laboral",
-    "actualidad": "Hoy",
-    "copy": "Todos los derechos reservados",
-    "lenguajes": "Lenguajes de programación",
-    "marcas": "Lenguajes de marcas",
-    "estilos": "Estilos",
-    "proximamente": "proximamente",
-    "ir": "Ir a"
+    "trabaTitle": "Vida laboral"
 }

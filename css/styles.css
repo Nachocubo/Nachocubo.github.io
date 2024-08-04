@@ -131,7 +131,7 @@ main .menu .select-hide div span {
   border-radius: 10px;
   display: block;
   position: relative;
-  line-height: 35px;
+  padding: 5px 0;
 }
 main .menu .select-hide div span a {
   text-decoration: none;
@@ -187,6 +187,19 @@ main .decor svg {
 }
 .separator1 div ul li {
   line-height: 50px;
+}
+.separator1 div blockquote {
+  font-size: 14pt;
+  background-color: rgba(0, 0, 0, 0.3137254902);
+  padding: 20px;
+  border-left: 10px solid white;
+}
+.separator1 div blockquote q {
+  font-style: italic;
+}
+.separator1 div blockquote p {
+  text-align: right;
+  margin-top: 5px;
 }
 .separator1 img {
   height: 400px;

@@ -1,40 +1,41 @@
 {
-    "proyectos": {
-        "title": "Projects",
-        "collection": [
-            {
-                "title": "dama",
-                "description": "Your online sports clothing store for men and women",
-                "URL": "",
-                "logo": "logo.png"
-            }
-        ]
-    },
-    "tituloWriter": "Full Stack Developer",
+    "actualidad": "Today",
+    "copy": "All rights reserved",
     "descripcion": [
         "Self-taught",
         "curious",
         "lover of languages and reading",
         "in my free time, writer"
     ],
+    "español": "Spanish",
+    "estilos": "Styles",
+    "formaTitle": "My education as a",
+    "frase": "The time doesn't matter, the important thing is not to stop trying.",
+    "idiomas": "Languages",
+    "ingles": "English",
+    "ir": "Go to",
+    "italiano": "Italian",
+    "lenguajes": "Programming languages",
+    "marcas": "Markup languages",
     "parrafo1": "Intermediate Vocational Training in Microcomputer Systems and Networks (2019-2021)",
     "parrafo2": "Advanced Vocational Training in Web Application Development (2022-2024)",
     "parrafo3": "Self-taught online courses (2019-present)",
+    "proximamente": "Comming soon",
+    "proyectos": {
+        "collection": [
+            {
+                "description": "Your online sports clothing store for men and women",
+                "logo": "logo.png",
+                "title": "dama",
+                "URL": ""
+            }
+        ],
+        "title": "Projects"
+    },
+    "quiensoy": "About me",
+    "tituloWriter": "Full Stack Developer",
     "trabajo1": "Técnico de Sistemas en BEEP Segovia",
     "trabajo2": "Desarroolador Web en CEASE",
     "trabajo3": "Junior Salesforce Consultant en Atlas Cloud",
-    "quiensoy": "About me",
-    "idiomas": "Languages",
-    "español": "Spanish",
-    "ingles": "English",
-    "italiano": "Italian",
-    "formaTitle": "My education as a",
-    "trabaTitle": "Work life",
-    "actualidad": "Today",
-    "copy": "All rights reserved",
-    "lenguajes": "Programming languages",
-    "marcas": "Markup languages",
-    "estilos": "Styles",
-    "proximamente": "Comming soon",
-    "ir": "Go to"
+    "trabaTitle": "Work life"
 }

@@ -1,40 +1,41 @@
 {
-    "proyectos": {
-        "title": "Projekts",
-        "collection": [
-            {
-                "title": "dama",
-                "description": "Ihr Online-Shop für Sportbekleidung für Männer und Frauen",
-                "URL": "",
-                "logo": "logo.png"
-            }
-        ]
-    },
-    "tituloWriter": "Full Stack Developer",
+    "actualidad": "Heute",
+    "copy": "Alle rechten voorbehouden",
     "descripcion": [
         "Autodidakt",
         "neugierig",
         "sprach- und lesebegeistert",
         "in meiner freizeit, Schriftstellerin"
     ],
+    "español": "Spanisch",
+    "estilos": "Stile",
+    "formaTitle": "Meine Ausbildung als ",
+    "frase": "Die Zeit spielt keine Rolle, das Wichtigste ist, nicht aufzuhören, es zu versuchen.",
+    "idiomas": "Sprachen",
+    "ingles": "Englisch",
+    "ir": "Reisen nach",
+    "italiano": "Italienisch",
+    "lenguajes": "Programmiersprachen",
+    "marcas": "Markup-Sprachen",
     "parrafo1": "Mittlerer Bildungszyklus in Mikrocomputer- und Netzwerksystemen (2019-2021)",
     "parrafo2": "Höherer Bildungszyklus in der Entwicklung von Webanwendungen (2022-2024)",
     "parrafo3": "Online-Kurse autodidaktisch (2019-heute)",
+    "proximamente": "Bald",
+    "proyectos": {
+        "collection": [
+            {
+                "description": "Ihr Online-Shop für Sportbekleidung für Männer und Frauen",
+                "logo": "logo.png",
+                "title": "dama",
+                "URL": ""
+            }
+        ],
+        "title": "Projekts"
+    },
+    "quiensoy": "Über mich",
+    "tituloWriter": "Full Stack Developer",
     "trabajo1": "Técnico de Sistemas en BEEP Segovia",
     "trabajo2": "Desarroolador Web en CEASE",
     "trabajo3": "Junior Salesforce Consultant en Atlas Cloud",
-    "quiensoy": "Über mich",
-    "idiomas": "Sprachen",
-    "español": "Spanisch",
-    "ingles": "Englisch",
-    "italiano": "Italienisch",
-    "formaTitle": "Meine Ausbildung als ",
-    "trabaTitle": "Berufsleben",
-    "actualidad": "Heute",
-    "copy": "Alle rechten voorbehouden",
-    "lenguajes": "Programmiersprachen",
-    "marcas": "Markup-Sprachen",
-    "estilos": "Stile",
-    "proximamente": "Bald",
-    "ir": "Reisen nach"
+    "trabaTitle": "Berufsleben"
 }

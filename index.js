@@ -137,6 +137,17 @@ document.addEventListener("DOMContentLoaded", function () {
             lista.appendChild(listLi);
         })
         divCont.appendChild(lista);
+        
+        var fraseCont = document.createElement('blockquote');
+        var frase = document.createElement('q');
+        frase.textContent = content.frase;
+        var autor = document.createElement('p');
+        autor.textContent = 'Ignacio Cubo';
+
+        fraseCont.appendChild(frase);
+        fraseCont.appendChild(autor);
+        divCont.appendChild(fraseCont);
+
         sobre.appendChild(divCont);
 
         var coords = [];
