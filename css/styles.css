@@ -319,7 +319,6 @@ main .decor svg {
 .idiomas {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 .idiomas h4 {
   position: relative;
@@ -328,7 +327,7 @@ main .decor svg {
 }
 .idiomas > span {
   position: relative;
-  width: 50vw;
+  width: 75vw;
   height: 20px;
   margin: 15px auto;
   float: left;
