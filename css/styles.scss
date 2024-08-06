@@ -364,7 +364,6 @@ main {
 .idiomas {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 
     h4 {
         position: relative;
@@ -374,7 +373,7 @@ main {
 
     >span {
         position: relative;
-        width: 50vw;
+        width: 75vw;
         height: 20px;
         margin: 15px auto;
         float: left;
