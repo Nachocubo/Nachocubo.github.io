@@ -211,13 +211,10 @@ main .decor svg {
   padding: 10px 50px;
 }
 .textDiv .typewriter {
-  width: max-content;
   height: max-content;
   margin: 0 auto;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 7px solid;
-  padding-right: 20px;
+  border-right: 3px solid;
+  padding-right: 5px;
   animation: blink 1s ease-in infinite;
 }
 .textDiv .timeline {
@@ -333,9 +330,8 @@ main .decor svg {
   float: left;
   font-size: 8pt;
 }
-/*Opacidade del fondo: 0.1882352941*/
 .idiomas > span .percentage {
-  background: linear-gradient(90deg, #00cba9, #0099ff);
+  background: linear-gradient(90deg, rgba(0, 203, 169, 0.1882352941), #00cba9, #0099ff);
   height: 100%;
   display: flex;
   align-items: center;

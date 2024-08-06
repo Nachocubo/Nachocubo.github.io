@@ -104,8 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para actualizar el contenido según el idioma seleccionado
     function updateContent(content) {
-        const typewriterElement = document.getElementById("typewriter");
-        typewriterElement.style.fontStyle = 'italic';
+        
         let index = 0;
         const text = content.tituloWriter;
         const velocidad = 150;
@@ -168,13 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('paragraph-2').innerHTML = `<ul><li>${content.parrafo2}</li><li>${content.parrafo3}</li>`;
         document.getElementById('paragraph-tra-1').innerHTML = content.trabajo1;
         document.getElementById('paragraph-tra-2').innerHTML = `<ul><li>${content.trabajo2}</li><li>${content.trabajo3}</li>`;
-        typewriterElement.innerHTML = '';
         document.querySelector('#proyectos').innerHTML = content.proyectos.title;
         document.querySelector('#idiomas').innerHTML = content.idiomas;
         document.querySelectorAll('.idiomas h4')[0].innerHTML = content.español;
         document.querySelectorAll('.idiomas h4')[1].innerHTML = content.ingles;
         document.querySelectorAll('.idiomas h4')[2].innerHTML = content.italiano;
-        document.querySelector('#formaTitle').innerHTML = content.formaTitle;
+        document.querySelector('#formaTitle').innerHTML = content.formaTitle + ' <span id="typewriter" class="typewriter"></span>';
         document.querySelectorAll('.year-marker:last-child').forEach(elem => {
             elem.setAttribute('data-year', content.actualidad);
         })
@@ -265,6 +263,10 @@ document.addEventListener("DOMContentLoaded", function () {
         /*
         *Efecto escritura de titulo
         */
+
+        const typewriterElement = document.getElementById("typewriter");
+        typewriterElement.style.fontStyle = 'italic';
+        typewriterElement.innerHTML = '';
 
         if (typeTimeout) {
             clearTimeout(typeTimeout);
