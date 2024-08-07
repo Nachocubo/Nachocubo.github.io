@@ -10,7 +10,10 @@
     "español": "Español",
     "estilos": "Estilos",
     "formaTitle": "Mi formación como",
-    "frase": "Da igual el tiempo, lo importante es no dejar de intentarlo",
+    "frase": [
+        "Da igual el tiempo, lo importante es no dejar de intentarlo",
+        "Prueba"
+    ],
     "idiomas": "Idiomas",
     "ingles": "Inglés",
     "ir": "Ir a",
