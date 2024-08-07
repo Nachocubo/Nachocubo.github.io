@@ -140,6 +140,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var fraseCont = document.createElement('blockquote');
         var frase = document.createElement('q');
         frase.textContent = content.frase;
+
+        /**
+         * for (let i = 0; i < content.frase.length; i++) {
+         *  if(i == content.frase.length - 1) {
+         *    i = 0;
+         *  }
+         * }
+         */
+
         var autor = document.createElement('p');
         autor.textContent = 'Ignacio Cubo';
 
