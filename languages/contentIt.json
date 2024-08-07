@@ -27,7 +27,13 @@
                 "description": "Il tuo negozio online di abbigliamento sportivo per uomini e donne",
                 "logo": "logo.png",
                 "title": "dama",
-                "URL": ""
+                "URL": "https://espejodedama.netlify.app/inicio"
+            },
+            {
+                "description": "Visualizzatore di pagine su più dispositivi",
+                "logo": "",
+                "title": "Responsive preview",
+                "URL": "https://responsiveviewer-by-nacho.netlify.app"
             }
         ],
         "title": "Progetti"

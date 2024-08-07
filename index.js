@@ -330,7 +330,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 altura = item.clientHeight;
             }
         })
-        menu.nextElementSibling.children[0].style.height = cont * altura + 'px';
+        //cont + 1 sirve para corregir la altura de la lista ya que uno de los nodos tiene mayor altura
+        menu.nextElementSibling.children[0].style.height = (cont + 1) * altura + 'px';
     })
 
     document.addEventListener('click', (e) => {
