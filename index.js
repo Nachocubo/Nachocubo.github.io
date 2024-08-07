@@ -330,17 +330,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     menu.addEventListener('click', () => {
-        let cont = 0;
         let altura = 0;
         menu.nextElementSibling.children[0].childNodes.forEach(item => {
             //coge los nodos que no son text y su altura
             if (item.nodeType !== 3) {
-                cont++;
-                altura = item.clientHeight;
+                console.log(item.clientHeight);
+                altura += item.clientHeight;
             }
         })
         //cont + 1 sirve para corregir la altura de la lista ya que uno de los nodos tiene mayor altura
-        menu.nextElementSibling.children[0].style.height = (cont + 1) * altura + 'px';
+        menu.nextElementSibling.children[0].style.height = altura + 'px';
     })
 
     document.addEventListener('click', (e) => {
