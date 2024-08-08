@@ -34,9 +34,9 @@
             },
             {
                 "description": "Visualizador de paginas en varios dispositivos",
-                "logo": "",
+                "logo": "rw-logo.png",
                 "title": "Responsive preview",
-                "URL": "https://responsiveviewer-by-nacho.netlify.app"
+                "URL": "https://resposive-viewer-by-nacho.netlify.app/"
             }
         ],
         "title": "Proyectos"

@@ -31,9 +31,9 @@
             },
             {
                 "description": "Page viewer on multiple devices",
-                "logo": "",
+                "logo": "rw-logo.png",
                 "title": "Responsive preview",
-                "URL": "https://responsiveviewer-by-nacho.netlify.app"
+                "URL": "https://resposive-viewer-by-nacho.netlify.app/"
             }
         ],
         "title": "Projects"
