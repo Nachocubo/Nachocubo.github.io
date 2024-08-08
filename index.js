@@ -139,11 +139,17 @@ document.addEventListener("DOMContentLoaded", function () {
         
         var fraseCont = document.createElement('blockquote');
         
+        var div = document.createElement('div');
         content.frase.forEach(item => {
             var frase = document.createElement('q');
             frase.textContent = item;
-
+            console.log(item);
+            div.appendChild(frase);
+            fraseCont.appendChild(div);
         })
+        var autor = document.createElement('p');
+        autor.textContent = 'Ignacio Cubo';
+        fraseCont.appendChild(autor);
 
         /* for (let i = 0; i < content.frase.length; i++) {
          if(i == content.frase.length - 1) {
@@ -152,11 +158,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } */
         
 
-        var autor = document.createElement('p');
-        autor.textContent = 'Ignacio Cubo';
-
-        fraseCont.appendChild(frase);
-        fraseCont.appendChild(autor);
         divCont.appendChild(fraseCont);
 
         sobre.appendChild(divCont);
@@ -337,7 +338,6 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.nextElementSibling.children[0].childNodes.forEach(item => {
             //coge los nodos que no son text y su altura
             if (item.nodeType !== 3) {
-                console.log(item.clientHeight);
                 altura += item.clientHeight;
             }
         })
