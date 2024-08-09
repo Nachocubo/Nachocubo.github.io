@@ -174,7 +174,7 @@ main .decor svg {
 .separator1 {
   background-color: #0099ff;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 20pt;
 }
 .separator1 div ul {
