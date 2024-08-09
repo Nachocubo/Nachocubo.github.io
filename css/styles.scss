@@ -219,10 +219,13 @@ main {
             background-color: #00000050;
             padding: 20px;
             border-left: 10px solid white;
+            overflow-x: hidden;
             
             div {
                 q {
                     font-style: italic;
+                    white-space: nowrap;
+                    animation: carrusel 10s 0s infinite ease;
                 }
             }
 
@@ -565,6 +568,31 @@ main {
 
     50% {
         border-color: white;
+    }
+}
+
+@keyframes carrusel {
+    
+    0% {
+        margin-left: 200%;
+    }
+    10%{
+        margin-left: -10px;
+    }
+    12%{
+        margin-left: 20px;
+    }
+    30%,40%,50%,60%,70%{
+        margin-left: 0;
+    }
+    80%{
+        margin-left: -10px;
+    }
+    90%{
+        margin-left: 20px;
+    }
+    100%{
+        margin-left: -200%;
     }
 }
 

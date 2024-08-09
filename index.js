@@ -143,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
         content.frase.forEach(item => {
             var frase = document.createElement('q');
             frase.textContent = item;
-            console.log(item);
             div.appendChild(frase);
             fraseCont.appendChild(div);
         })

@@ -131,13 +131,12 @@ main .menu .select-hide div span {
   border-radius: 10px;
   display: block;
   position: relative;
-  padding: 5px 0;
 }
 main .menu .select-hide div span a {
   text-decoration: none;
   color: #00cba9;
   font-weight: 100;
-  padding: 0 20px;
+  padding: 5px 20px;
   font-size: 12pt;
   display: block;
 }
@@ -193,9 +192,12 @@ main .decor svg {
   background-color: rgba(0, 0, 0, 0.3137254902);
   padding: 20px;
   border-left: 10px solid white;
+  overflow-x: hidden;
 }
-.separator1 div blockquote q {
+.separator1 div blockquote div q {
   font-style: italic;
+  white-space: nowrap;
+  animation: carrusel 10s 0s infinite ease;
 }
 .separator1 div blockquote p {
   text-align: right;
@@ -494,6 +496,29 @@ main .decor svg {
   }
   50% {
     border-color: white;
+  }
+}
+@keyframes carrusel {
+  0% {
+    margin-left: 200%;
+  }
+  10% {
+    margin-left: -10px;
+  }
+  12% {
+    margin-left: 20px;
+  }
+  30%, 40%, 50%, 60%, 70% {
+    margin-left: 0;
+  }
+  80% {
+    margin-left: -10px;
+  }
+  90% {
+    margin-left: 20px;
+  }
+  100% {
+    margin-left: -200%;
   }
 }
 @media screen and (width < 1000px) {
