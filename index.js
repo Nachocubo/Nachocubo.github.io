@@ -88,12 +88,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 return 0;
         }
     }
-    
+
     /* Nivel de idiomas */
     document.querySelector('#es-bar .percentage').innerHTML += `<span class="extremo">${esLvl}</span>`;
     document.querySelector('#en-bar .percentage').innerHTML += `<span class="extremo">${enLvl}</span>`;
     document.querySelector('#it-bar .percentage').innerHTML += `<span class="extremo">${itLvl}</span>`;
-    
+
     document.addEventListener('scroll', () => {
         if (window.scrollY >= 3400) {
             document.querySelector('#es-bar .percentage').style.width = operacion(esLvl) + '%';
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para actualizar el contenido según el idioma seleccionado
     function updateContent(content) {
-        
+
         let index = 0;
         const text = content.tituloWriter;
         const velocidad = 150;
@@ -136,12 +136,14 @@ document.addEventListener("DOMContentLoaded", function () {
             lista.appendChild(listLi);
         })
         divCont.appendChild(lista);
-        
+
         var fraseCont = document.createElement('blockquote');
-        
+
+        //carrusel
         var div = document.createElement('div');
-        content.frase.forEach(item => {
-            var frase = document.createElement('q');
+        //solo se crea un elemento y luego se juega con el contenido
+        var frase = document.createElement('q');
+        content.frase.forEach((item, ìndex) => {
             frase.textContent = item;
             div.appendChild(frase);
             fraseCont.appendChild(div);
@@ -150,14 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
         autor.textContent = 'Ignacio Cubo';
         fraseCont.appendChild(autor);
 
-        /* for (let i = 0; i < content.frase.length; i++) {
-         if(i == content.frase.length - 1) {
-           i = 0;
-         }
-        } */
-        
-
         divCont.appendChild(fraseCont);
+        //Fin de carrusel
 
         sobre.appendChild(divCont);
 
